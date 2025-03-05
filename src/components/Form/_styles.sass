@@ -1,0 +1,129 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+
+/* =======================
+ * Forms & Fields (General)
+ * ======================= */
+ 
+.form__group
+    position: relative
+
+.form__row 
+    position: relative
+    margin-top: pc-vw(25px)
+
+    &:first-child
+        margin-top: 0px !important
+
+.form__label
+    position: relative
+    margin-bottom: pc-vw(10px)
+    font-family: $font--poppins
+    font-size: pc-vw(16px)
+    font-weight: 500
+    line-height: 1
+
+.form__note
+    margin-top: pc-vw(8px)
+    font-family: $font--poppins
+    font-size: pc-vw(14px)
+    line-height: 1.2
+
+    strong
+        font-weight: bold
+
+.apply-border
+    width: 100%
+    height: pc-vw(50px)
+    padding: pc-vw(10px) pc-vw(15px)
+    font-family: $font--poppins
+    font-size: pc-vw(16px)
+    color: $color--black
+    background: $color--corn
+    border: 1px solid $color--corn
+    border-radius: pc-vw(10px)
+
+    &.is--invalid
+        border: 1px solid $color--red !important
+
+    &::placeholder
+        color: #cecece
+
+textarea 
+    height: pc-vw(200px) !important
+    white-space: pre-wrap
+
+input:read-only,
+textarea:read-only
+    background: #f1f1f1 !important
+
+    &.bg--white
+        background: #fff !important
+    
+.form__error
+    margin-top: pc-vw(8px)
+    font-size: pc-vw(14px)
+    color: $color--red
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+    -webkit-appearance: none
+    margin: 0
+
+
+/* Firefox */
+input[type=number] 
+    -moz-appearance: textfield
+
+// ==================================================================================================================================
+// ==================================================================================================================================
+
+@media screen and (max-width: 1000px)
+    .form__row 
+        margin-top: sp-vw(10px)
+
+    .form__label
+        margin-bottom: sp-vw(5px)
+        font-size: sp-vw(8px)
+
+    .form__note
+        margin-top: sp-vw(8px)
+        font-size: sp-vw(7px)
+
+    .apply-border
+        height: sp-vw(25px)
+        padding: sp-vw(5px) sp-vw(8px)
+        font-size: sp-vw(8px)
+        border-radius: sp-vw(5px)
+
+    textarea 
+        height: sp-vw(100px) !important
+        
+    .form__error
+        margin-top: sp-vw(4px)
+        font-size: sp-vw(7px)
+
+@media screen and (max-width: 600px)
+    .form__row 
+        margin-top: sp-vw(12px)
+
+    .form__label
+        margin-bottom: sp-vw(7px)
+        font-size: sp-vw(11px)
+
+    .form__note
+        margin-top: sp-vw(8px)
+        font-size: sp-vw(9px)
+
+    .apply-border
+        height: sp-vw(32px)
+        font-size: sp-vw(11px)
+        border-radius: 5px
+
+    textarea 
+        height: sp-vw(120px) !important
+        
+    .form__error
+        margin-top: sp-vw(4px)
+        font-size: sp-vw(9px)

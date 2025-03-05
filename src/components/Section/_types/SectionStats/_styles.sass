@@ -1,0 +1,93 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Section > Stats
+ * ======================= */
+
+.snuggle-stats
+    .frame__limit
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 72%
+
+.snuggle-stat
+    position: relative
+    text-align: center
+
+    &:nth-child(even)
+        &::after
+            background-image: url('assets/paw-outline-1.svg')
+
+    &::after
+        content: ''
+        @include absolute-centerXY
+        z-index: 1
+        width: pc-vw(140px)
+        height: pc-vw(140px)
+        background-image: url('assets/paw-outline-2.svg')
+        background-size: cover
+        background-repeat: no-repeat
+        opacity: 0.05
+
+.snuggle-stat__value
+    position: relative
+    z-index: 2
+    font-size: pc-vw(45px)
+    font-weight: 600
+    color: $color--pink
+
+.snuggle-stat__label
+    position: relative
+    z-index: 2
+    margin-top: pc-vw(5px)
+    font-size: pc-vw(16px)
+    font-weight: 500
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .snuggle-stats
+        .frame__limit
+            flex-wrap: wrap
+            width: 90%
+
+    .snuggle-stat
+        width: calc(96% / 4)
+       
+        &::after
+            width: sp-vw(60px)
+            height: sp-vw(60px)
+
+    .snuggle-stat__value
+        font-size: sp-vw(16px)
+
+    .snuggle-stat__label
+        margin-top: sp-vw(2px)
+        font-size: sp-vw(8px)
+
+    
+@media screen and (max-width: 600px)
+    .snuggle-stat
+        width: 48%
+        margin-top: sp-vw(15px)
+        padding: sp-vw(15px) sp-vw(10px)
+        background: $color--corn2
+        border-radius: 5px
+
+        &:nth-child(-n+2)
+            margin-top: 0px !important
+
+        &::after
+            width: sp-vw(70px)
+            height: sp-vw(70px)
+
+    .snuggle-stat__value
+        font-size: sp-vw(18px)
+
+    .snuggle-stat__label
+        margin-top: sp-vw(3px)
+        font-size: sp-vw(11px)

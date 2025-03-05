@@ -1,0 +1,33 @@
+
+// compute => size, base_viewport
+@function pc-vw($size, $base-vw: 1680px)    
+    @return calc(($size * 100vw) / $base-vw)
+
+@function sp-vw($size, $base-vw: 375px)    
+    @return calc(($size * 100vw) / $base-vw)
+
+    
+@mixin absolute-topleft($top: 0px, $left: 0px)
+    position: absolute
+    top: $top
+    left: $left
+
+@mixin absolute-centerXY
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+@mixin absolute-centerX
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+@mixin absolute-centerY
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+@mixin fullsize
+    width: 100%
+    height: 100%

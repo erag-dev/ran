@@ -1,0 +1,132 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+
+/* =====================
+ * Modal
+ * ===================== */
+
+.modal-holder
+    position: fixed
+    top: 0px
+    left: 0px
+    z-index: 999
+    display: none
+    width: 100%
+    height: 100%
+    overflow: auto
+    padding: pc-vw(16px)
+    text-align: center
+
+    &.is--active
+        display: block
+
+    &::after
+        content: ''
+        display: inline-block
+        vertical-align: middle
+        height: 100%
+        margin-left: -0.5em
+        
+.modal-wrapper
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1
+    @include fullsize
+    background: rgba(0, 0, 0, 0.7)
+    backface-visibility: hidden
+
+.modal
+    position: relative
+    z-index: 2
+    display: inline-block
+    vertical-align: middle
+    max-width: 50vw
+    width: 100%
+    overflow: hidden
+    margin-left: -0.6vw
+    margin-bottom: 0.75vw
+    background: #fff
+    border-radius: pc-vw(10px)
+    outline: 0
+    transform: translate3d(0, 0, 0)
+
+    &.size--l
+        max-width: 55vw
+
+    &.size--xl
+        max-width: 70vw
+
+    &.size--m
+        max-width: 40vw
+
+    &.size--s
+        max-width: 25vw
+
+    .frame__header,
+    .frame__desc
+        width: 100%
+
+.modal__close
+    position: absolute
+    top: pc-vw(15px)
+    right: pc-vw(15px)
+    z-index: 3
+    width: pc-vw(35px)
+    height: pc-vw(35px)
+    cursor: pointer
+    transition: all 0.3s ease
+
+    &:hover
+        opacity: 0.7
+
+    img
+        width: 100%
+
+.modal__contents
+    position: relative
+    width: 100%
+    padding: pc-vw(80px) pc-vw(40px)
+
+
+// ==================================================================================================================================
+// ==================================================================================================================================
+
+@media screen and (max-width: 1000px)
+    .modal-holder
+        padding: sp-vw(16px)
+            
+    .modal
+        max-width: 90%
+        border-radius: sp-vw(5px)
+
+        &.size--l,
+        &.size--xl
+            max-width: 800px
+
+        &.size--m
+            max-width: 500px
+
+        &.size--s
+            max-width: 400px
+
+    .modal__close
+        top: sp-vw(8px)
+        right: sp-vw(8px)
+        width: sp-vw(16px)
+        height: sp-vw(16px)
+
+    .modal__contents
+        padding: sp-vw(40px) sp-vw(20px)
+
+
+@media screen and (max-width: 600px)
+    .modal__close
+        width: sp-vw(22px)
+        height: sp-vw(22px)
+
+    
+@media screen and (max-width: 420px)
+    .modal__close
+        width: 25px
+        height: 25px

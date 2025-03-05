@@ -1,0 +1,69 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+
+/* =====================
+ * Modal Letter
+ * ===================== */
+
+.modal-holder.modal--letter
+    .modal
+        background: $color--corn
+
+    .frame__desc
+        *
+            line-height: 1.6
+
+    .desc--2
+        margin-top: pc-vw(50px)
+
+        *
+            font-style: italic
+
+    .btn
+        width: pc-vw(290px)
+
+.modal--letter__remarks
+    text-align: right
+
+    *
+        font-size: pc-vw(16px)
+        font-weight: 500
+
+    img
+        margin: pc-vw(15px) 0
+        margin-left: auto !important
+
+// ==================================================================================================================================
+// ==================================================================================================================================
+
+@media screen and (max-width: 1000px)
+    .modal-holder.modal--letter
+        .desc--2
+            margin-top: sp-vw(20px)
+
+        .btn
+            width: sp-vw(130px)
+
+    .modal--letter__remarks
+        *
+            font-size: sp-vw(8px)
+
+        img
+            margin: sp-vw(8px) 0
+
+            
+@media screen and (max-width: 600px)
+    .modal-holder.modal--letter
+        .desc--2
+            margin-top: sp-vw(25px)
+
+        .btn
+            width: sp-vw(180px)
+
+    .modal--letter__remarks
+        *
+            font-size: sp-vw(11px)
+
+        img
+            width: sp-vw(45px)
+            margin: sp-vw(11px) 0

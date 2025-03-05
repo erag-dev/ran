@@ -1,0 +1,88 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Item Box
+ * ======================= */
+    
+.snuggle-itembox
+    width: 31%
+    overflow: hidden
+    background: $color--corn2
+    border-radius: pc-vw(10px)
+    text-align: center
+
+    &:hover
+        .snuggle-itembox__thumbnail
+            img
+                transform: scale(1.05)
+
+.snuggle-itembox__infos
+    padding: pc-vw(25px) pc-vw(15px)
+
+.snuggle-itembox__thumbnail
+    position: relative
+    overflow: hidden
+
+    img
+        @include fullsize
+        object-fit: cover
+        transition: all 0.15s ease
+
+.snuggle-itembox__title
+    margin-bottom: pc-vw(15px)
+    font-family: $font--itim
+    font-size: pc-vw(20px)
+    color: $color--pink
+    line-height: 1
+
+.snuggle-itembox__desc
+    margin-bottom: pc-vw(20px)
+    font-size: pc-vw(16px)
+
+    
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .snuggle-itembox
+        width: 100%
+        max-width: 500px
+        margin: auto
+        margin-top: sp-vw(15px)
+        border-radius: sp-vw(5px)
+
+        &:first-child
+            margin-top: 0px !important
+
+    .snuggle-itembox__infos
+        padding: sp-vw(12px) sp-vw(8px)
+
+    .snuggle-itembox__title
+        margin-bottom: sp-vw(8px)
+        font-size: sp-vw(10px)
+
+    .snuggle-itembox__desc
+        margin-bottom: sp-vw(10px)
+        font-size: sp-vw(8px)
+
+
+@media screen and (max-width: 600px)
+    .snuggle-itembox
+        margin-top: sp-vw(20px)
+        border-radius: 5px
+
+    .snuggle-itembox__infos
+        padding: sp-vw(20px) sp-vw(15px)
+
+    .snuggle-itembox__title
+        margin-bottom: sp-vw(12px)
+        font-size: sp-vw(15px)
+
+    .snuggle-itembox__desc
+        margin-bottom: sp-vw(15px)
+        font-size: sp-vw(11px)
+
+
+

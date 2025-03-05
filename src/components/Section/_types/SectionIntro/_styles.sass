@@ -1,0 +1,77 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Section > Intro
+ * ======================= */
+
+.snuggle-subpageintro
+    text-align: center
+
+    .frame__limit
+        padding-top: pc-vw(50px)
+
+    .frame__header
+        width: 100%
+        margin-bottom: pc-vw(40px)
+        font-size: pc-vw(56px)
+        line-height: 1.1
+
+    .frame__desc
+        margin-bottom: pc-vw(60px)
+
+        *
+            font-size: pc-vw(18px)
+
+.snuggle-subpageintro__toptext
+    margin-bottom: pc-vw(10px)
+    font-size: pc-vw(18px)
+    font-weight: 500
+    line-height: 1
+    
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .snuggle-subpageintro
+        .frame__limit
+            padding-top: sp-vw(20px)
+
+        .frame__header
+            margin-bottom: sp-vw(15px)
+            font-size: sp-vw(20px)
+
+            br
+                display: none
+
+        .frame__desc
+            margin-bottom: sp-vw(25px)
+
+            *
+                font-size: sp-vw(9px)
+
+    .snuggle-subpageintro__toptext
+        margin-bottom: sp-vw(5px)
+        font-size: sp-vw(9px)
+        
+    
+@media screen and (max-width: 600px)
+    .snuggle-subpageintro
+        .frame__limit
+            padding-top: sp-vw(25px)
+
+        .frame__header
+            margin-bottom: sp-vw(20px)
+            font-size: sp-vw(22px)
+
+        .frame__desc
+            margin-bottom: sp-vw(25px)
+
+            *
+                font-size: sp-vw(12px)
+
+    .snuggle-subpageintro__toptext
+        margin-bottom: sp-vw(8px)
+        font-size: sp-vw(12px)
+        

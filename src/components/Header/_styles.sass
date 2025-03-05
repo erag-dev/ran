@@ -1,0 +1,178 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Header
+ * ======================= */
+
+header
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 999
+    width: 100%
+    background: transparent
+    transition: all 0.15s ease
+
+    &.on--scroll
+        background: rgba(255, 249, 238, 0.95)
+        box-shadow: pc-vw(1px) 0 pc-vw(5px) rgba(0, 0, 0, 0.1)
+
+.snuggle-header__limit
+    display: flex
+    align-items: center
+    justify-content: space-between
+    max-width: 90%
+    margin: auto
+    padding: pc-vw(20px) 0
+
+.snuggle-header__logoholder
+    width: pc-vw(220px)
+
+.snuggle-header__links
+    display: flex
+    align-items: center
+
+.snuggle-header__link
+    margin-left: pc-vw(60px)
+
+    &:first-child
+        margin-left: 0px !important
+
+    &:last-child
+        position: relative
+        width: pc-vw(95px)
+        height: pc-vw(35px)
+        border: 1px solid $color--navyblue
+        border-radius: pc-vw(10px)
+        transition: all 0.15s ease
+
+        &.is--active,
+        &:hover
+            border: 1px solid $color--pink
+
+        p
+            @include absolute-centerXY
+            width: 90%
+            text-align: center
+
+    &:hover,
+    .active
+        p
+            color: $color--pink
+
+    p
+        font-family: $font--itim
+        font-size: pc-vw(20px)
+        transition: all 0.15s ease
+
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1450px)
+    header
+        &.on--scroll
+            box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1)
+
+    .snuggle-header__limit
+        padding: 15px 0
+
+    .snuggle-header__logoholder
+        width: 200px
+
+    .snuggle-header__link
+        margin-left: 50px
+
+        &:last-child
+            width: 85px
+            height: 32px
+
+        p
+            font-size: 18px
+
+
+@media screen and (max-width: 1000px)
+    header
+        &.on--scroll
+            .snuggle-header__links
+                box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.05)
+
+    .snuggle-header__limit
+        padding: sp-vw(5px) 0
+
+    .snuggle-header__logoholder
+        width: sp-vw(90px)
+
+    .snuggle-header__menu
+        *
+            font-family: $font--itim
+            font-size: sp-vw(10px)
+            
+    .snuggle-header__links
+        position: absolute
+        top: 100%
+        right: 0
+        z-index: 999
+        display: block
+        width: sp-vw(90px)
+        padding: sp-vw(12px) 5%
+        background: rgba(255, 249, 238, 0.95)
+        border-radius: 0px 0 0 10px
+        text-align: right
+        transform: translateX(100%)
+        transition: all 0.15s ease
+
+        &.is--active
+            transform: translateX(0)
+
+    .snuggle-header__link
+        margin-top: sp-vw(12px)
+        margin-left: 0px !important
+
+        &:first-child
+            margin-top: 0px
+
+        &:last-child
+            width: auto
+            height: auto
+            border: none !important
+            
+            p
+                position: relative
+                top: auto
+                left: auto
+                width: auto
+                transform: translate(0, 0)
+                text-align: right
+
+        p
+            font-size: sp-vw(10px)
+
+@media screen and (max-width: 600px)
+    .snuggle-header__limit
+        padding: 8px 0
+
+    .snuggle-header__logoholder
+        width: sp-vw(120px)
+
+    .snuggle-header__menu
+        *
+            font-size: sp-vw(15px)
+
+    .snuggle-header__links
+        width: sp-vw(120px)
+        padding: sp-vw(15px) 5%
+
+    .snuggle-header__link
+        margin-top: 15px
+
+        p
+            font-size: sp-vw(15px)
+
+
+
+
+
+        

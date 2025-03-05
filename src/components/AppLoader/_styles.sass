@@ -1,0 +1,103 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Loader
+ * ======================= */
+
+.loader-wrapper
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9999
+    @include fullsize
+    background: rgba(0, 0, 0, 0.8)
+
+.loader 
+    @include absolute-centerXY
+    display: inline-block
+    width: pc-vw(40px)
+    height: pc-vw(40px)
+
+    div 
+        position: absolute
+        top: pc-vw(33.33333px)
+        width: pc-vw(13px)
+        height: pc-vw(13px)
+        border-radius: 50%
+        background: $color--pink
+        animation-timing-function: cubic-bezier(0, 1, 1, 0)
+
+        &:nth-child(1) 
+            left: pc-vw(8px)
+            animation: lds-ellipsis1 0.6s infinite
+
+        &:nth-child(2) 
+            left: pc-vw(8px)
+            animation: lds-ellipsis2 0.6s infinite
+
+        &:nth-child(3) 
+            left: pc-vw(32px)
+            animation: lds-ellipsis2 0.6s infinite
+
+        &:nth-child(4) 
+            left: pc-vw(56px)
+            animation: lds-ellipsis3 0.6s infinite
+
+@keyframes lds-ellipsis1 
+    0% 
+        transform: scale(0)
+    
+    100% 
+        transform: scale(1)
+  
+
+@keyframes lds-ellipsis3 
+    0% 
+        transform: scale(1)
+    
+    100% 
+        transform: scale(0)
+  
+
+@keyframes lds-ellipsis2 
+    0% 
+        transform: translate(0, 0)
+    
+    100% 
+        transform: translate(#{pc-vw(24px)}, 0)
+  
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .loader 
+        width: sp-vw(20px)
+        height: sp-vw(20px)
+
+        div 
+            top: sp-vw(15px)
+            width: sp-vw(6.5px)
+            height: sp-vw(6.5px)
+
+            &:nth-child(1) 
+                left: sp-vw(4px)
+
+            &:nth-child(2) 
+                left: sp-vw(4px)
+
+            &:nth-child(3) 
+                left: sp-vw(16px)
+
+            &:nth-child(4) 
+                left: sp-vw(28px)
+
+
+    @keyframes lds-ellipsis2 
+        0% 
+            transform: translate(0, 0)
+        
+        100% 
+            transform: translate(#{sp-vw(12px)}, 0)

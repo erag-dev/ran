@@ -1,0 +1,24 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Layout
+ * ======================= */
+
+body
+    background: $color--corn2
+
+.snuggle-page
+    padding-top: pc-vw(71px)
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .snuggle-page
+        padding-top: sp-vw(25px)
+        
+@media screen and (max-width: 600px)
+    .snuggle-page
+        padding-top: sp-vw(38px)

@@ -1,0 +1,344 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+
+/* =======================
+ * HELPER CLASS
+ * ======================= */
+    
+*
+    box-sizing: border-box
+
+/*
+ * COLORS
+ */
+.color--black 
+    color: $color--black
+.color--white  
+    color: $color--white !important
+.color--pink
+    color: $color--pink !important
+
+/*
+ * FONTS
+ */
+h1, h2, h3, h4, h5, h6 
+    font-family: $font--itim
+    line-height: 1.2
+    color: $color--navyblue
+    -webkit-font-smoothing: antialiased
+
+p, span, label, a, i, strong, li 
+    font-family: $font--poppins
+    line-height: 1.45
+    color: $color--navyblue
+    -webkit-font-smoothing: antialiased
+
+/*
+ * FRAME
+ */
+.frame
+    position: relative
+    z-index: 2
+    overflow: hidden
+
+    &.overflow--visible
+        overflow: visible
+
+.frame__limit
+    position: relative
+    z-index: 2
+    width: 90%
+    margin: auto
+    padding: pc-vw(100px) 0
+
+.frame__edge
+    position: absolute
+    z-index: 1
+    width: 100%
+
+    &.edge--1
+        top: pc-vw(-42px)
+    
+    &.edge--2
+        bottom: pc-vw(-50px)
+
+.frame__header
+    width: 75% 
+    margin: auto
+    margin-bottom: pc-vw(20px)
+    font-size: pc-vw(40px)
+    text-align: center
+    opacity: 0
+    transform: translateY(25%)
+
+    span
+        font-family: inherit !important
+        font-size: inherit !important
+        color: $color--pink
+
+.frame__desc
+    width: 70%
+    margin: auto
+    margin-bottom: pc-vw(50px)
+    text-align: center
+
+    *
+        font-size: pc-vw(16px)
+
+@media screen and (max-width: 1000px)
+    .frame__limit
+        padding: sp-vw(30px) 0
+
+    .frame__header
+        width: 100%
+        margin-bottom: sp-vw(12px)
+        font-size: sp-vw(16px)
+
+    .frame__desc
+        width: 100%
+        margin-bottom: sp-vw(20px)
+
+        *
+            font-size: sp-vw(8px)
+
+
+@media screen and (max-width: 600px)
+    .frame.overflow--visible
+        .frame__limit
+            padding: sp-vw(30px) 0
+
+    .frame__limit
+        padding: sp-vw(35px) 0
+
+    .frame__header
+        margin-bottom: sp-vw(15px)
+        font-size: sp-vw(18px)
+
+    .frame__desc
+        margin-bottom: sp-vw(25px)
+
+        *
+            font-size: sp-vw(11px)
+
+/*
+ * Box (With Hover)
+ */
+.box--hoverheart
+    position: relative
+
+    &::before,
+    &::after
+        content: ''
+        position: absolute
+        z-index: 2
+        opacity: 0
+        transition: all 0.15s ease
+    
+    &::before
+        top: 0
+        left: 0
+        @include fullsize
+        background: rgba(0, 0, 0, 0.5)
+
+    &::after
+        @include absolute-centerXY
+        width: pc-vw(30px)
+        height: pc-vw(22px)
+        background-image: url('assets/heart-hug.svg')
+        background-size: cover
+        background-repeat: no-repeat
+        cursor: pointer
+
+    &:hover
+        &::before,
+        &::after
+            opacity: 1
+
+        img
+            transform: scale(1.05)
+
+    img
+        transition: all 0.15s ease
+
+@media screen and (max-width: 1000px)
+    .box--hoverheart
+        &::after
+            width: sp-vw(15px)
+            height: sp-vw(11px)
+
+@media screen and (max-width: 600px)
+    .box--hoverheart
+        &::after
+            width: sp-vw(20px)
+            height: sp-vw(16px)
+
+/*
+ * FRAME > BACKGROUND
+ */
+.frame__bg
+    position: absolute
+    top: 0px
+    left: 0px
+    @include fullsize
+    background: $color--corn
+    background-repeat: no-repeat !important
+    background-position: center center !important
+
+    &.bring--front
+        z-index: -1
+    &.bring--back
+        z-index: -2
+
+    &.size--cover
+        background-size: cover
+    &.size--contain
+        background-size: contain
+
+    &.repeat
+        background-position: top !important
+        background-repeat: repeat !important
+
+    &.align--r
+        left: auto
+        right: 0
+    &.align--l
+        left: 0
+    &.align--c
+        left: 50%
+        transform: translateX(-50%)
+
+
+
+/*
+ * IMAGES
+ * prerequisite: parent container
+ * purpose: showing its original state according to the
+   width and height of the parent / holder.
+ */
+.img-fit 
+    position: absolute
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    max-width: 100%
+    max-height: 100%
+    margin: auto
+
+    &.size--90
+        max-width: 90% !important
+        max-height: 90% !important
+
+    &.size--80
+        max-width: 80% !important
+        max-height: 80% !important
+
+    
+/*
+ * WIDTH & HEIGHT
+ */
+.full 
+    width: 100%
+    height: 100%
+
+/*
+ * COLUMNS
+ */
+.by-2  
+    & > *  
+        width: 50%
+        &:first-child,
+        &:nth-child(2n+1)  
+            margin-left: 0% 
+        
+    &.border--s > *  
+        width: 49.5% 
+    &.border--m > *  
+        width: 49.25% 
+    &.border--l > *  
+        width: 49% 
+    &.border--xl > *  
+        width: 48.5% 
+    &.border--xxl > *  
+        width: 47.5% 
+
+.by-3  
+    & > *  
+        width: 33.333%
+        &:first-child,
+        &:nth-child(3n+1)  
+            margin-left: 0% 
+        
+    &.border--s > *  
+        width: 32.666666667% 
+    &.border--m > *  
+        width: 32.333333333% 
+    &.border--l > *  
+        width: 32% 
+    &.border--xl > *  
+        width: 31.333333333% 
+    &.border--xxl > *  
+        width: 30% 
+
+.by-4  
+    & > *  
+        width: 25%
+        &:first-child,
+        &:nth-child(4n+1)  
+            margin-left: 0% 
+        
+    &.border--s > *  
+        width: 24.25% 
+    &.border--m > *  
+        width: 23.875% 
+    &.border--l > *  
+        width: 23.5% 
+    &.border--xl > *  
+        width: 22.75% 
+    &.border--xxl > *  
+        width: 21.25% 
+
+.by-5  
+    & > *  
+        width: 20%
+        &:first-child,
+        &:nth-child(5n+1)  
+            margin-left: 0% 
+
+    &.border--s > *  
+        width: 19.2% 
+    &.border--m > *  
+        width: 18.8% 
+    &.border--l > *  
+        width: 18.4% 
+    &.border--xl > *  
+        width: 17.6% 
+    &.border--xxl > *  
+        width: 16% 
+
+.border--s > *  
+    margin-left: 1% 
+.border--m > *  
+    margin-left: 1.5% 
+.border--l > *  
+    margin-left: 2% 
+.border--xl > *  
+    margin-left: 3% 
+.border--xxl > *  
+    margin-left: 5% 
+
+/*
+ * DISPLAY
+ */
+.display__inline
+    font-size: 0
+    
+    & > * 
+        display: inline-block
+        vertical-align: middle
+
+    &.align--t > *  
+        vertical-align: top 
+    &.align--b > *  
+        vertical-align: bottom 
+
