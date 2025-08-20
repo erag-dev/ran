@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.1.1**
++ [fixed] adjusted vite.config.js
+
 **1.1.0**
 + installed gh-pages
 
