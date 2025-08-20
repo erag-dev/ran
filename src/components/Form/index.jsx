@@ -4,6 +4,7 @@ import FormGroup from "./_addons/FormGroup"
 import FormRow from "./_addons/FormRow"
 import FormError from "./_addons/FormError"
 import FormInputField from "./_fields/FormInputField"
+import FormSelectField from "./_fields/FormSelectField"
 import FormTextAreaField from "./_fields/FormTextAreaField"
 
 import "./_styles.sass"
@@ -14,5 +15,6 @@ export {
     FormRow,
     FormError,
     FormInputField,
+    FormSelectField,
     FormTextAreaField,
 }

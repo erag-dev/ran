@@ -1,0 +1,46 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Tag
+ * ======================= */
+
+.ran-tag
+    position: relative
+    width: pc-vw(60px)
+    height: pc-vw(20px)
+    border-radius: pc-vw(5px)
+    
+    *
+        @include absolute-centerXY
+        top: 55%
+        width: 95%
+        text-transform: uppercase
+        font-family: $font--oxanium
+        font-size: pc-vw(12px)
+        font-weight: bold
+        color: $color--black
+        text-align: center
+        line-height: 1 !important
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .ran-tag
+        width: sp-vw(32px)
+        height: sp-vw(10px)
+        border-radius: sp-vw(2px)
+        
+        *
+            font-size: sp-vw(6px)
+            
+            
+@media screen and (max-width: 600px)
+    .ran-tag
+        width: sp-vw(35px)
+        height: sp-vw(12px)
+        border-radius: 3px
+        
+        *
+            font-size: sp-vw(7px)

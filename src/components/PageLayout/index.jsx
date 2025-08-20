@@ -1,36 +1,32 @@
 
-import { useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
-import { gsap } from "gsap"
-import { useGSAP } from "@gsap/react"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import usePageTitle from "hooks/usePageTitle"
 
 import AppLoader from "components/AppLoader"
 import Header from "components/Header"
 import Footer from "components/Footer"
-import { AppModalLetter } from "components/AppModal"
+import MovingDots from "components/MovingDots"
+import { AppModalAuth } from "components/AppModal"
 
 import "./_styles.sass"
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(useGSAP);
 
 const PageLayout = ({
     pageClass,
     pageName,
-    isAdopt,
+    isLogin,
+    isDl,
     isLoading,
-    showSponsor,
-    hideFooterEdge,
-    hideGetInTouch,
-    callbackIsAdopt,
+    callbackIsLogin,
+    callbackIsDl,
     children
 }) => {
 
     const location = useLocation();
-    const container = useRef();
+
+    const [isAuthOpen, setIsAuthOpen] = useState(false);
 
     usePageTitle(`${pageName}`);
 
@@ -43,31 +39,25 @@ const PageLayout = ({
     }, [location]);
 
     /**
-     * @animate
-     * => fade in each element
+     * @auth
      */
-    useGSAP(() => {
-        const targetElems = gsap.utils.toArray('.frame__header');
-        targetElems.forEach((elem) => {
-            gsap.to(elem, {
-                autoAlpha: 1,
-                y: 0,
-                duration: 0.5,
-                scrollTrigger: {
-                    trigger: elem,
-                    triggerHook: 0.2,
-                }                
-            })
-        });
-    }, { scope: container });
+    useEffect(() => {
+        setIsAuthOpen(isLogin);
+    }, [isLogin]);
+
+    const handleModal = (state) => {
+        setIsAuthOpen(state);
+        callbackIsLogin(state);
+    }
 
     return <>
 
-        <Header />
+        <Header 
+            callbackLogin={setIsAuthOpen}
+        />
 
         <main 
-            className={`${pageClass} snuggle-page`}
-            ref={container}
+            className={`${pageClass} ran-page`}
         >
 
             {children}
@@ -76,18 +66,16 @@ const PageLayout = ({
                 isLoading && <AppLoader />
             }
 
+            <MovingDots />
+
         </main>
 
-        <Footer 
-            hideEdge={hideFooterEdge}
-            hideGetInTouch={hideGetInTouch}
-            showSponsor={showSponsor}
-        />
+        <Footer />
 
 
-        <AppModalLetter 
-            modalState={isAdopt}
-            callbackIsOpen={callbackIsAdopt}
+        <AppModalAuth 
+            modalState={isAuthOpen}
+            callbackIsOpen={handleModal}
         />
     </>
 }

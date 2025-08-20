@@ -10,22 +10,31 @@
 
 .form__row 
     position: relative
+    display: flex
+    flex-wrap: wrap
+    align-items: center
     margin-top: pc-vw(25px)
 
     &:first-child
         margin-top: 0px !important
 
+    &.row--message
+        align-items: flex-start
+
 .form__label
     position: relative
+    width: pc-vw(130px)
+    margin-right: pc-vw(25px)
     margin-bottom: pc-vw(10px)
-    font-family: $font--poppins
+    font-family: $font--nunito
     font-size: pc-vw(16px)
     font-weight: 500
     line-height: 1
+    text-align: right
 
 .form__note
     margin-top: pc-vw(8px)
-    font-family: $font--poppins
+    font-family: $font--nunito
     font-size: pc-vw(14px)
     line-height: 1.2
 
@@ -33,21 +42,59 @@
         font-weight: bold
 
 .apply-border
-    width: 100%
-    height: pc-vw(50px)
+    width: calc(100% - #{pc-vw(155px)})
+    height: pc-vw(40px)
     padding: pc-vw(10px) pc-vw(15px)
-    font-family: $font--poppins
+    font-family: $font--nunito
     font-size: pc-vw(16px)
-    color: $color--black
-    background: $color--corn
-    border: 1px solid $color--corn
-    border-radius: pc-vw(10px)
+    color: $color--white
+    background: rgba(255, 255, 255, 0.15)
+    border: 1px solid $color--white
+    border-radius: pc-vw(5px)
 
     &.is--invalid
         border: 1px solid $color--red !important
 
     &::placeholder
         color: #cecece
+
+.select-holder
+    position: relative
+    width: calc(100% - #{pc-vw(155px)})
+    background: rgba(255, 255, 255, 0.1)
+    border-radius: pc-vw(10px)
+
+    &::after
+        content: ''
+        position: absolute
+        @include absolute-centerY
+        right: pc-vw(15px)
+        width: pc-vw(10px)
+        height: pc-vw(10px)
+        background-image: url('assets/arrow-down.png')
+        background-position: center
+        background-size: contain
+        background-repeat: no-repeat
+        transition: all 0.15s ease
+        
+    .apply-border
+        width: 100% !important
+
+select
+    background: transparent !important
+    border: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    color: #333
+    cursor: pointer
+
+    &:invalid
+        color: gray !important
+
+    option
+        color: #1D1D1D
+        text-align: left !important
+
 
 textarea 
     height: pc-vw(200px) !important
@@ -61,6 +108,9 @@ textarea:read-only
         background: #fff !important
     
 .form__error
+    display: block !important
+    width: 100%
+    padding-left: pc-vw(155px)
     margin-top: pc-vw(8px)
     font-size: pc-vw(14px)
     color: $color--red
@@ -81,49 +131,71 @@ input[type=number]
 
 @media screen and (max-width: 1000px)
     .form__row 
-        margin-top: sp-vw(10px)
+        margin-top: sp-vw(12px)
 
     .form__label
+        width: sp-vw(70px)
+        margin-right: sp-vw(10px)
         margin-bottom: sp-vw(5px)
         font-size: sp-vw(8px)
 
     .form__note
-        margin-top: sp-vw(8px)
+        margin-top: sp-vw(4px)
         font-size: sp-vw(7px)
 
     .apply-border
-        height: sp-vw(25px)
-        padding: sp-vw(5px) sp-vw(8px)
+        width: calc(100% - #{sp-vw(80px)})
+        height: sp-vw(20px)
+        padding: sp-vw(5px) sp-vw(7px)
         font-size: sp-vw(8px)
+        border-radius: sp-vw(2px)
+
+    .select-holder
+        width: calc(100% - #{sp-vw(80px)})
         border-radius: sp-vw(5px)
+
+        &::after
+            right: sp-vw(8px)
+            width: sp-vw(5px)
+            height: sp-vw(5px)
 
     textarea 
         height: sp-vw(100px) !important
         
     .form__error
+        padding-left: sp-vw(80px)
         margin-top: sp-vw(4px)
         font-size: sp-vw(7px)
 
+
 @media screen and (max-width: 600px)
     .form__row 
-        margin-top: sp-vw(12px)
+        display: block
+        margin-top: sp-vw(15px)
 
     .form__label
-        margin-bottom: sp-vw(7px)
+        width: 100%
+        margin-bottom: sp-vw(8px)
         font-size: sp-vw(11px)
+        text-align: left
 
     .form__note
         margin-top: sp-vw(8px)
         font-size: sp-vw(9px)
 
     .apply-border
+        width: 100% !important
         height: sp-vw(32px)
         font-size: sp-vw(11px)
         border-radius: 5px
+
+    .select-holder
+        width: 100% !important
 
     textarea 
         height: sp-vw(120px) !important
         
     .form__error
-        margin-top: sp-vw(4px)
-        font-size: sp-vw(9px)
+        margin-top: sp-vw(5px)
+        padding-left: 0 !important
+        font-size: sp-vw(10px)

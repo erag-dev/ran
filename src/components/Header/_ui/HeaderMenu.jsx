@@ -14,18 +14,14 @@ const HeaderMenu = ({
 
     return (
         <div 
-            className={`snuggle-header__menu ${
+            className={`ran-header__menu ${
                 isActive ? 'is--active' : ''
             }`}
             onClick={() => handleToggle()}
         >
-            <p>
-                {
-                    !isActive
-                    ? 'Menu'
-                    : 'Close'
-                }
-            </p>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     )
 }

@@ -10,10 +10,11 @@
     display: flex
     justify-content: center
     align-items: center
-    width: pc-vw(245px)
+    width: pc-vw(280px)
     height: pc-vw(50px)
-    background: transparent
-    border: 1px solid $color--navyblue
+    margin: auto
+    background: rgba(0, 0, 0, 0.3)
+    border: 1px solid $color--aqua
     border-radius: pc-vw(10px)
     box-sizing: border-box
     outline: none !important
@@ -21,61 +22,30 @@
     cursor: pointer
 
     &:hover
-        border: 1px solid $color--pink
+        background: rgba(75, 255, 213, 0.1)
 
-        &::after
-            transform: scale(0.92)
-
-        .btn__text
-            color: $color--pink
-
-    &::after
-        content: ''
-        width: pc-vw(21px)
-        height: pc-vw(18px)
-        margin-left: pc-vw(7px)
-        background-image: url('assets/heart-hug.svg')
-        background-size: contain
-        background-repeat: no-repeat
-        transition: all 0.15s ease
-
-    &.pink
-        border: 1px solid $color--pink
+    &.white
+        border: 1px solid $color--white
 
         .btn__text
-            color: $color--pink
+            color: $color--white
 
         &:hover
-            border: 1px solid $color--navyblue
+            background: rgba(255, 255, 255, 0.1)
 
-            .btn__text
-                color: $color--navyblue
+    &.btn--messenger
+        margin-top: pc-vw(30px)
 
-    &.as--link
-        width: pc-vw(120px)
-        height: pc-vw(38px)
-        margin: auto
-
-        &.xl
-            width: pc-vw(150px)
-            height: pc-vw(50px)
-
-        &::after
-            display: none
-
-        p
-            padding: pc-vw(3px) pc-vw(10px)
-            font-size: pc-vw(16px)
-            transition: all 0.15s ease
-
-    &.align--c
-        margin: auto
-        
+        img
+            width: pc-vw(22px)
+            margin-right: pc-vw(10px)
 
 .btn__text
-    font-family: $font--poppins
+    font-family: $font--oxanium
     font-weight: 500
     font-size: pc-vw(18px)
+    color: $color--aqua
+    line-height: 1 !important
     transition: all 0.15s ease
     
 
@@ -85,57 +55,34 @@
 
 @media screen and (max-width: 1000px)
     .btn
-        width: sp-vw(115px)
-        height: sp-vw(28px)
+        width: sp-vw(130px)
+        height: sp-vw(25px)
         border-radius: sp-vw(5px)
 
-        &::after
-            width: sp-vw(10px)
-            height: sp-vw(9px)
-            margin-left: sp-vw(3px)
+        &.btn--messenger
+            margin-top: sp-vw(15px)
 
-        &.as--link
-            width: sp-vw(60px)
-            height: sp-vw(19px)
-            margin: auto
-
-            &.xl
-                width: sp-vw(75px)
-                height: sp-vw(25px)
-
-            p
-                padding: sp-vw(2px) sp-vw(5px)
-                font-size: sp-vw(8px)
-
-
+            img
+                width: sp-vw(11px)
+                margin-right: sp-vw(5px)
+      
     .btn__text
         font-size: sp-vw(8px)
 
 @media screen and (max-width: 600px)
     .btn
-        width: sp-vw(160px)
+        width: sp-vw(170px)
         height: sp-vw(35px)
         border-radius: 5px
 
-        &::after
-            width: sp-vw(14px)
-            height: sp-vw(11px)
-            margin-left: sp-vw(5px)
+        &.btn--messenger
+            width: sp-vw(190px)
+            margin-top: sp-vw(18px)
 
-        &.as--link
-            width: sp-vw(80px)
-            height: sp-vw(25px)
-            margin: auto
-
-            &.xl
-                width: sp-vw(90px)
-                height: sp-vw(30px)
-
-            p
-                padding: sp-vw(3px) sp-vw(6px)
-                font-size: sp-vw(11px)
-
+            img
+                width: sp-vw(13px)
+                margin-right: sp-vw(7px)
 
     .btn__text
-        font-size: sp-vw(11px)
+        font-size: sp-vw(12px)
     

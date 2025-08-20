@@ -1,17 +1,22 @@
 
 import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 
 import useScreenSizeChecker from "hooks/useScreenSizeChecker"
 
 import HeaderLogo from "./_ui/HeaderLogo"
 import HeaderLinks from "./_ui/HeaderLinks"
+import HeaderStatus from "./_ui/HeaderStatus"
 import HeaderMenu from "./_ui/HeaderMenu"
 
 import "./_styles.sass"
 
-const Header = () => {
+const Header = ({
+    callbackLogin,
+}) => {
 
     const isMobile1000px = useScreenSizeChecker(1000);
+    const location = useLocation();
 
     const [scrolling, setScrolling] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,20 +45,42 @@ const Header = () => {
 
     return(
         <header 
-            className={`snuggle-header ${
+            className={`ran-header ${
                 scrolling ? 'on--scroll' : ''
+            } ${
+                location?.pathname === '/' ? 'in--home' : ''
             }`}
         >
-            <div className="snuggle-header__limit">
+            <div className="ran-header__limit">
                
                 <HeaderLogo />
 
-                <HeaderLinks isMenuOpen={isMenuOpen} />
-
                 {
-                    isMobile1000px
-                    ? <HeaderMenu callbackIsOpen={handleMenu} />
-                    : null
+                    !isMobile1000px ? (
+                        <>
+                            {
+                                location?.pathname === '/' ? (
+                                    <HeaderStatus />
+                                ): (
+                                    <HeaderLinks
+                                        isMenuOpen={false}
+                                        callbackLogin={callbackLogin}
+                                    />
+                                )
+                            }
+
+                            <div></div>
+                        </>
+                    ): (
+                        <>
+                            <HeaderLinks
+                                isMenuOpen={isMenuOpen}
+                                callbackLogin={callbackLogin}
+                            />
+                            
+                            <HeaderMenu callbackIsOpen={handleMenu} />
+                        </>
+                    )
                 }
 
             </div>

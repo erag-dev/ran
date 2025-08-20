@@ -8,7 +8,7 @@ const FormRow = ({
     return <div className={`form__row ${
         extraClass ? `row--${extraClass}` : `row--${label.toLowerCase()}`
     }`}>
-        <p className="form__label">{ label }</p>
+        <p className="form__label">{ label }:</p>
 
         {children}
     </div>

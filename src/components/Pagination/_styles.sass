@@ -1,0 +1,70 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Pagination
+ * ======================= */
+
+.pagination
+    position: relative
+    display: flex
+    justify-content: center
+    margin-top: pc-vw(50px)
+
+.pagination__link
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    width: pc-vw(35px)
+    height: pc-vw(35px)
+    margin-left: pc-vw(8px)
+    border: 1px solid $color--white
+    border-radius: pc-vw(5px)
+    text-align: center
+    cursor: pointer
+
+    &:first-child
+        margin-left: 0px !important
+
+    &:nth-child(2),
+    &:hover,
+    &.is--active
+        background: rgba(255, 77, 0, 0.5)
+        border: 1px solid $color--redorange
+
+    *
+        font-size: pc-vw(16px)
+
+    img
+        width: 45%
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .pagination
+        margin-top: sp-vw(25px)
+
+    .pagination__link
+        width: sp-vw(17px)
+        height: sp-vw(17px)
+        margin-left: sp-vw(4px)
+        border-radius: sp-vw(2px)
+
+        *
+            font-size: sp-vw(8px)
+
+            
+@media screen and (max-width: 600px)
+    .pagination
+        margin-top: sp-vw(25px)
+
+    .pagination__link
+        width: sp-vw(25px)
+        height: sp-vw(25px)
+        margin-left: sp-vw(5px)
+        border-radius: 3px
+
+        *
+            font-size: sp-vw(12px)

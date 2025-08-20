@@ -2,17 +2,132 @@
 @use 'stylesGeneral/_base/_mixins' as *
     
 /* =======================
- * Home Page
+ * Rank Page
  * ======================= */
 
 /*
- * Kv
+ * Table
  */
+.ran-rank__table
+    width: 80%
+    margin: auto
+    text-align: center
 
+    thead
+        th
+            padding: pc-vw(15px) pc-vw(10px)
+            background: rgba(255, 77, 0, 0.5)
+            font-family: $font--oxanium
+            font-weight: bold
 
+    tr
+        overflow: hidden
+        background: rgba(255, 255, 255, 0.15)
+        border-radius: pc-vw(5px)
+
+        &.space
+            height: pc-vw(8px)
+
+    th, td
+        vertical-align: middle
+        font-size: pc-vw(16px)
+        color: $color--white
+        line-height: 1
+
+        &:first-child
+            border-top-left-radius: pc-vw(5px)
+            border-bottom-left-radius: pc-vw(5px)
+
+        &:last-child
+            border-top-right-radius: pc-vw(5px)
+            border-bottom-right-radius: pc-vw(5px)
+
+    td
+        padding: pc-vw(7px) pc-vw(10px)
+        font-family: $font--nunito
+
+        &:first-child
+            font-family: $font--oxanium
+            font-weight: bold
+
+    img
+        margin: auto
+
+.ran-rank__table-class
+    width: pc-vw(55px)
+
+.ran-rank__table-school
+    width: pc-vw(15px)
 
 // ===================================================================================================
 // ===================================================================================================
 
+@media screen and (max-width: 1000px)
+    .ran-rank__cards
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
 
-    
+    .ran-rank__card
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        width: 49%
+        margin-top: sp-vw(10px)
+        padding: sp-vw(10px)
+        background: rgba(255, 255, 255, 0.15)
+        border-radius: sp-vw(5px)
+
+        &:nth-child(-n+2)
+            margin-top: 0px
+        
+    .ran-rank__card-row
+        width: 49%
+        margin-top: sp-vw(5px)
+
+        &:first-child
+            display: flex
+            align-items: center
+            width: 100%
+            margin-top: 0px !important
+
+            > p:first-child
+                margin-bottom: 0px !important
+                line-height: 1
+
+        > p:first-child
+            margin-bottom: sp-vw(2px)
+            color: rgba(255, 255, 255, 0.5)
+
+    .ran-rank__card-num,
+    .ran-rank__card-name
+        font-family: $font--oxanium
+
+    .ran-rank__card-num
+        font-weight: bold
+        color: $color--redorange !important
+
+    .ran-rank__card-images
+        display: flex
+        align-items: center
+
+    .ran-rank__card-class
+        width: sp-vw(25px)
+        
+    .ran-rank__card-school
+        width: sp-vw(8px)
+        margin-left: sp-vw(8px)
+
+@media screen and (max-width: 600px)
+    .ran-rank__card
+        width: 100%
+
+        &:nth-child(2)
+            margin-top: sp-vw(10px)
+
+    .ran-rank__card-class
+        width: sp-vw(40px)
+        
+    .ran-rank__card-school
+        width: sp-vw(15px)
+        margin-left: sp-vw(10px)

@@ -1,28 +1,25 @@
 
-import AppImg from "components/AppImg"
+const CALL_TO_ACTIONS = [
+    'DOWNLOAD GAME CLIENT',
+    'PLAY FOR FREE, SIGN UP NOW!',
+    'JOIN IN OUR DISCORD GROUP'
+];
 
-import footerEdge from "assets/footer-pets.png"
-
-
-const FooterTop = ({
-    hideEdge,
-}) => {
+const FooterTop = () => {
     return (
-        <div className={`snuggle-footer__top ${
-            hideEdge ? 'is--hide' : ''
-        }`}>
-            {
-                !hideEdge ? (
-                    <AppImg src={footerEdge} extraClass="snuggle-footer__top-edge" />
-                ): null
-            }
-            
-            <div className="snuggle-footer__limit frame__limit">
-                
-                <h2 className="frame__header">
-                    We are dedicated to weaving a tapestry of love and hope,<br/>
-                    where every rescued pet finds their <span>fur-ever</span> home and <span>warm</span> embrace.
-                </h2>
+        <div className="ran-footer__top">
+            <div className="frame__limit">
+
+                {
+                    CALL_TO_ACTIONS?.map((item, index) => {
+                        return <div
+                            key={index}
+                            className="ran-footer__top-calltoaction"
+                        >
+                            <p className="fs--16px">{ item }</p>
+                        </div>
+                    })
+                }
 
             </div>
         </div>

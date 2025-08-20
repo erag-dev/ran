@@ -1,0 +1,118 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Support Page
+ * ======================= */
+
+/*
+ * Box
+ */
+.ran-support__contents-box
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: pc-vw(780px)
+    margin: auto
+    padding: pc-vw(25px) pc-vw(40px)
+    background: rgba(255, 255, 255, 0.15)
+    border-radius: pc-vw(10px)
+
+    .frame__header
+        width: 100%
+        margin-bottom: pc-vw(10px)
+        text-align: left
+
+    .frame__desc
+        width: 100%
+        margin-bottom: 0
+        text-align: left
+
+    .btn
+        width: pc-vw(150px)
+        margin-right: 0px
+
+/*
+ * Form
+ */
+.ran-support__formholder
+    position: relative
+    width: pc-vw(600px)
+    margin: auto
+    margin-top: pc-vw(50px)
+
+    .btn
+        width: pc-vw(150px)
+        margin-top: pc-vw(50px)
+
+
+.ran-support__extras
+    margin-top: pc-vw(50px)
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    /*
+     * Box
+     */
+    .ran-support__contents-box
+        width: 100%
+        padding: sp-vw(14px) sp-vw(20px)
+        border-radius: sp-vw(5px)
+
+        .frame__header
+            margin-bottom: sp-vw(5px)
+
+        .btn
+            width: sp-vw(75px)
+
+    /*
+     * Form
+     */
+    .ran-support__formholder
+        width: 100%
+        margin-top: sp-vw(20px)
+
+        .btn
+            width: sp-vw(75px)
+            margin-top: sp-vw(20px)
+
+    .ran-support__extras
+        margin-top: sp-vw(20px)
+    
+
+@media screen and (max-width: 600px)
+    /*
+     * Box
+     */
+    .ran-support__contents-box
+        display: block
+        padding: sp-vw(15px)
+        border-radius: 5px
+
+        .frame__header
+            margin-bottom: sp-vw(10px)
+
+        .frame__header,
+        .frame__desc
+            text-align: center !important
+
+        .btn
+            width: sp-vw(90px)
+            margin-top: sp-vw(10px)
+            margin-right: auto
+
+    /*
+     * Form
+     */
+    .ran-support__formholder
+        margin-top: sp-vw(25px)
+
+        .btn
+            width: sp-vw(90px)
+            margin-top: sp-vw(25px)
+
+    .ran-support__extras
+        margin-top: sp-vw(25px)

@@ -1,32 +1,10 @@
 
 import "./_styles.sass"
 
-const Button = ({
-    extraClass,
-    btnLbl,
-    isDiv,
-    ...props
-}) => {
-    return (
-        <>
-            {
-                isDiv ? (
-                    <div 
-                        className={`${extraClass ? extraClass : ''} btn`}
-                        onClick={props.onClick}
-                    >   
-                        <p className="btn__text">{ btnLbl }</p>
-                    </div>
-                ) : (
-                    <button 
-                        className={`${extraClass ? extraClass : ''} btn`}
-                    >   
-                        <p className="btn__text">{ btnLbl }</p>
-                    </button>
-                )
-            }
-        </>
-    )
-}
+import ButtonNormal from "./ButtonNormal"
+import ButtonMessenger from "./ButtonMessenger"
 
-export default Button;
+export {
+    ButtonNormal,
+    ButtonMessenger,
+}

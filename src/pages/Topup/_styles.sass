@@ -1,0 +1,150 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Topup Page
+ * ======================= */
+
+.ran-topup__main
+    .frame__limit
+        width: 100%
+        padding: 0
+
+/*
+ * Group
+ */
+.ran-topup__group
+    padding: pc-vw(50px) 0
+
+    &.group--how
+        background: rgba(255, 255, 255, 0.1)
+
+    &.group--channels
+        .ran-topup__group-list
+            margin-bottom: pc-vw(30px)
+
+        .ran-topup__group-item
+            padding-top: pc-vw(55px)
+            background: rgba(255, 255, 255, 0.15)
+
+        h4
+            margin-bottom: pc-vw(10px)
+            font-weight: 500
+            color: $color--aqua
+            letter-spacing: pc-vw(1px)
+
+    .frame__header
+        margin-bottom: 0
+
+    .frame__desc
+        margin-top: pc-vw(15px)
+        margin-bottom: 0
+
+        strong
+            font-weight: bold !important
+
+    > div
+        width: 75%
+        margin: auto
+
+.ran-topup__group-list
+    display: flex
+    justify-content: space-between
+    margin-top: pc-vw(30px)
+
+.ran-topup__group-item
+    position: relative
+    width: 31%
+    padding: pc-vw(25px)
+    background: rgba(0, 0, 0, 0.3)
+    border-radius: pc-vw(10px)
+    text-align: center
+
+.ran-topup__group-item__tag
+    position: absolute
+    top: pc-vw(12px)
+    left: pc-vw(12px)
+    width: pc-vw(90px)
+
+/*
+ * Terms
+ */
+.ran-topup__terms
+    .frame__desc
+        margin-bottom: pc-vw(40px)
+        text-align: left
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    /*
+     * Group
+     */
+    .ran-topup__group
+        padding: sp-vw(20px) 0
+
+        &.group--channels
+            .ran-topup__group-list
+                margin-bottom: sp-vw(20px)
+
+            .ran-topup__group-item
+                padding-top: sp-vw(25px)
+
+            h4
+                margin-bottom: sp-vw(5px)
+
+        .frame__desc
+            margin-top: sp-vw(15px)
+
+        > div
+            width: 90%
+            margin: auto
+
+    .ran-topup__group-list
+        flex-wrap: wrap
+        margin-top: sp-vw(15px)
+
+    .ran-topup__group-item
+        width: 100%
+        max-width: sp-vw(200px)
+        margin: auto
+        margin-top: sp-vw(5px)
+        padding: sp-vw(15px) sp-vw(10px)
+        border-radius: sp-vw(5px)
+
+        &:first-child
+            margin-top: 0px !important
+
+    .ran-topup__group-item__tag
+        top: sp-vw(6px)
+        left: sp-vw(6px)
+        width: sp-vw(45px)
+
+    /*
+     * Terms
+     */
+    .ran-topup__terms
+        .frame__desc
+            margin-bottom: sp-vw(20px)
+    
+@media screen and (max-width: 600px)
+    /*
+     * Group
+     */
+    .ran-topup__group-item
+        max-width: 80%
+        margin-top: sp-vw(10px)
+        border-radius: 5px
+
+    .ran-topup__group-item__tag
+        top: sp-vw(8px)
+        left: sp-vw(8px)
+        width: sp-vw(60px)
+
+@media screen and (max-width: 400px)
+    /*
+     * Group
+     */
+    .ran-topup__group-item
+        max-width: 100%

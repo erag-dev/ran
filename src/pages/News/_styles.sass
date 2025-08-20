@@ -1,0 +1,116 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * News Page
+ * ======================= */
+
+.ran-news__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+.ran-news__item
+    position: relative
+    width: 30%
+    margin-top: pc-vw(50px)
+    cursor: pointer
+
+    &:nth-child(-n+3)
+        margin-top: 0px
+
+    &:hover
+        .ran-news__item-title
+            color: $color--aqua
+
+        .ran-news__item-thumbnail
+            img
+                transform: scale(1.05)
+
+    .ran-tag
+        position: absolute
+        top: pc-vw(15px)
+        left: pc-vw(15px)
+
+.ran-news__item-thumbnail
+    position: relative
+    width: 100%
+    height: pc-vw(280px)
+    overflow: hidden
+    border-radius: pc-vw(10px)
+
+    img
+        @include fullsize
+        object-fit: cover
+        transition: all 0.15s ease
+
+.ran-news__item-date
+    margin-top: pc-vw(15px)
+
+.ran-news__item-title,
+.ran-news__item-desc
+    width: 90%
+    margin: auto
+    margin-top: pc-vw(15px)
+
+.ran-news__item-title
+    font-weight: 500
+    text-align: center
+    transition: all 0.15s ease
+
+
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .ran-news__item
+        width: 49%
+        margin-top: sp-vw(20px)
+
+        &:nth-child(3)
+            margin-top: sp-vw(20px)
+
+        &:nth-child(-n+2)
+            margin-top: 0px
+
+        .ran-tag
+            top: sp-vw(7px)
+            left: sp-vw(7px)
+
+    .ran-news__item-thumbnail
+        height: sp-vw(125px)
+        border-radius: sp-vw(5px)
+
+    .ran-news__item-date
+        margin-top: sp-vw(7px)
+
+    .ran-news__item-title,
+    .ran-news__item-desc
+        margin-top: sp-vw(7px)
+
+@media screen and (max-width: 1000px)
+    .ran-news__item
+        width: 100%
+        margin-top: sp-vw(25px)
+
+        &:nth-child(2),
+        &:nth-child(3)
+            margin-top: sp-vw(25px)
+
+        &:first-child
+            margin-top: 0px
+
+        .ran-tag
+            top: sp-vw(8px)
+            left: sp-vw(8px)
+
+    .ran-news__item-thumbnail
+        height: sp-vw(220px)
+        border-radius: 5px
+
+    .ran-news__item-date,
+    .ran-news__item-title,
+    .ran-news__item-desc
+        margin-top: sp-vw(10px)

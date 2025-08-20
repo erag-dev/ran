@@ -8,11 +8,400 @@
 /*
  * Kv
  */
+.ran-home__kv
+    .frame__bg
+        background-position: bottom center !important
+
+    .frame__limit
+        min-height: 600px
+        height: 94vh
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .frame__header
+        text-transform: uppercase
+
+.ran-home__kv-ran
+    width: pc-vw(230px)
+    margin: auto
+    margin-bottom: pc-vw(17px)
+
+/*
+ * Board
+ */
+.ran-home__board
+    .frame__limit
+        padding-top: pc-vw(75px)
+
+    .frame__bg
+        background-position: top center !important
+
+    h2
+        position: relative
+        z-index: 2
+        margin-bottom: pc-vw(25px)
+        font-weight: 500
+        text-transform: uppercase
+        color: $color--white
+
+.ran-home__board-groups
+    position: relative
+    width: 100%
+    display: flex
+    justify-content: space-between
+
+    &.groups--2
+        margin-top: pc-vw(30px)
+
+        .ran-home__board-group.group--req
+            width: 66%
+
+.ran-home__board-group
+    position: relative
+    width: 32%
+    padding: pc-vw(28px)
+    overflow: hidden
+    background: rgba(0, 0, 0, 0.5)
+    border-radius: pc-vw(10px)
+    text-align: left
+
+    &.group--wars,
+    &.group--btns
+        padding: 0px !important
+
+    &.group--btns
+        @include bg-cover-attrib
+        background-image: url('assets/home/bg-download.png')
+
+        &::before
+            content: ''
+            @include absolute-topleft
+            z-index: 1
+            @include fullsize
+            background: rgba(0, 0, 0, 0.79)
+
+        > div
+            position: relative
+            z-index: 2
+            display: flex
+            align-items: center
+            width: 100%
+            height: 50%
+
+            &:first-child
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+
+.ran-home__board-item
+    display: flex
+    padding: pc-vw(15px) 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+
+    &:first-of-type
+        padding-top: 0px !important
+
+    &:last-of-type
+        padding-bottom: 0px !important
+        border-bottom: none !important
+
+    > div:last-child
+        width: calc(100% - #{pc-vw(60px)})
+        padding-left: pc-vw(33px)
+
+    h4
+        margin-bottom: pc-vw(5px)
+        font-weight: 500
+
+.ran-home__board-war
+    position: relative
+    width: 100%
+    padding: pc-vw(28px)
+    @include bg-cover-attrib
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+
+    &:last-child
+        border-bottom: none !important
+
+    &::before
+        content: ''
+        @include absolute-topleft
+        z-index: 1
+        @include fullsize
+        background: rgba(0, 0, 0, 0.79)
+
+    &.war--cw
+        background-image: url('assets/home/bg-cw.png')
+
+        .ran-home__board-war__attrs
+            display: flex
+            justify-content: space-between
+            
+            > div
+                width: 48%
+
+    &.war--tw
+        background-image: url('assets/home/bg-tw.png')
+
+    h2
+        margin-bottom: pc-vw(15px)
 
 
+.ran-home__board-war__attrs
+    position: relative
+    z-index: 2
+
+.ran-home__board-war__attr
+    display: flex
+    align-items: center
+    margin-top: pc-vw(8px)
+
+    &:first-child
+        margin-top: 0px !important
+
+    &.attr--guild,
+    &.attr--school
+        > p:last-child
+            font-size: pc-vw(16px)
+            font-weight: bold
+
+    > p:first-child
+        width: pc-vw(70px)
+        font-weight: 500
+
+    > p:last-child
+        width: calc(100% - #{70px})
+        font-weight: 500
+
+    img
+        width: pc-vw(16px)
+
+
+.ran-home__board-req__list
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    > div
+        display: block
+        width: 48%
+
+        &:nth-child(-n+2)
+            padding-top: 0px
+
+        &:nth-child(5)
+            padding-bottom: 0px !important
+            border-bottom: none !important
+
+/*
+ * Videos
+ */
+.ran-home__vids
+    .frame__limit
+        display: flex
+        flex-wrap: wrap
+        width: 100% !important
+        padding: 0 !important
+    
+.ran-home__vid
+    position: relative
+    width: 50%
+    height: pc-vw(500px)
+    overflow: hidden
+
+    &:hover
+        &::before
+            opacity: 0
+
+        .ran-home__vid-play
+            img
+                transform: scale(0.9)
+                opacity: 0.7
+
+        > img
+            transform: scale(1.05)
+
+    &::before
+        content: ''
+        z-index: 1
+        @include dark-overlay
+
+    img
+        @include fullsize
+        object-fit: cover
+        transition: all 0.15s ease
+
+.ran-home__vid-play
+    @include absolute-centerXY
+    z-index: 2
+    width: pc-vw(80px)
+    height: pc-vw(80px)
+    cursor: pointer
+
+    img
+        transition: all 0.15s ease
+
+/*
+ * Feature
+ */
+.ran-home__feature
+    .frame__limit
+        width: 100%
+        padding-bottom: 0px !important
+
+    .frame__header
+        width: 90%
+        font-family: $font--nunito
+        font-weight: normal
+        line-height: 1.5
+
+.ran-home__feature-gallery
+    display: flex
+
+.ran-home__feature-img
+    position: relative
+
+    &:hover
+        &::before
+            opacity: 0
+
+        .ran-home__feature-img__overlay
+            top: 40%
+            opacity: 0
+
+    &::before
+        content: ''
+        @include dark-overlay
+
+.ran-home__feature-img__overlay
+    @include absolute-centerXY
+    transition: all 0.15s ease
+
+    img
+        width: pc-vw(170px)
 
 // ===================================================================================================
 // ===================================================================================================
 
+@media screen and (max-width: 1000px)
+    /*
+     * Kv
+     */
+    .ran-home__kv 
+        .frame__limit
+            height: 80vh
+            min-height: 500px
+            padding-top: sp-vw(60px)
+
+    .ran-home__kv-ran
+        width: sp-vw(90px)
+        margin-bottom: sp-vw(8px)
+
+    /*
+     * Board
+     */
+    .ran-home__board
+        .frame__limit
+            padding-top: sp-vw(30px)
+
+        h2
+            margin-bottom: sp-vw(15px)
+
+    .ran-home__board-groups
+        flex-wrap: wrap
+        
+        &.groups--2
+            margin-top: sp-vw(10px)
+
+    .ran-home__board-group
+        width: 49%
+        padding: sp-vw(10px) sp-vw(8px)
+
+        &.group--req
+            width: 100% !important
+
+    .ran-home__board-item
+        padding: sp-vw(6px) 0
+
+        > div:last-child
+            width: calc(100% - #{sp-vw(32px)})
+            padding-left: sp-vw(12px)
+
+        h4
+            margin-bottom: sp-vw(2px)
+
+
+    /*
+     * Videos
+     */
+    .ran-home__vid
+        width: 100%
+        height: sp-vw(250px)
+
+    .ran-home__vid-play
+        width: sp-vw(40px)
+        height: sp-vw(40px)
+      
+
+    /*
+     * Feature
+     */
+    .ran-home__feature 
+        .frame__header
+            br
+                display: none
+        
+@media screen and (max-width: 600px)
+    /*
+     * Kv
+     */
+    .ran-home__kv-ran
+        width: sp-vw(130px)
+        margin-bottom: sp-vw(15px)
+
+    /*
+     * Board
+     */
+    .ran-home__board
+        .frame__limit
+            padding-top: sp-vw(35px)
+
+        h2
+            margin-bottom: sp-vw(25px)
+
+    .ran-home__board-group
+        width: 100%
+        padding: sp-vw(15px) sp-vw(10px)
+
+        &.group--important-guides
+            margin-top: sp-vw(10px)
+
+    .ran-home__board-item
+        padding: sp-vw(6px) 0
+
+        > div:last-child
+            width: calc(100% - #{sp-vw(32px)})
+            padding-left: sp-vw(12px)
+
+        h4
+            margin-bottom: sp-vw(4px)
 
     
+// ===================================================================================================
+// ===================================================================================================
+
+
+@media screen and (max-width: 1000px) and (max-height: 800px)
+    .ran-home__kv 
+        .frame__limit
+            min-height: 650px
+
+@media screen and (max-width: 500px) and (max-height: 600px)
+    .ran-home__kv 
+        .frame__limit
+            min-height: 600px
+            
+@media screen and (max-width: 320px) and (max-height: 500px)
+    .ran-home__kv 
+        .frame__limit
+            min-height: 450px
+            

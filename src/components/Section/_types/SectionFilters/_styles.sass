@@ -1,0 +1,73 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Section > Filters
+ * ======================= */
+
+.ran-filters
+    background: $color--rust
+
+    .frame__limit
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: pc-vw(25px) 0
+
+.ran-filters__field
+    display: flex
+    align-items: center
+    margin-left: pc-vw(90px)
+
+    &:first-child
+        margin-left: 0px
+
+    .select-holder
+        width: pc-vw(180px)
+        margin-left: pc-vw(15px)
+
+    select
+        padding-right: pc-vw(25px)
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .ran-filters
+        .frame__limit
+            padding: sp-vw(10px) 0
+
+    .ran-filters__field
+        margin-left: sp-vw(15px)
+
+        .select-holder
+            width: sp-vw(70px)
+            margin-left: sp-vw(8px)
+
+        select
+            padding-right: sp-vw(10px)
+    
+@media screen and (max-width: 600px)
+    .ran-filters
+        .frame__limit
+            display: block
+            padding: sp-vw(15px) 0
+
+    .ran-filters__field
+        margin-left: auto
+        margin-top: sp-vw(10px)
+
+        &:first-child
+            margin-top: 0px !important
+
+        .select-holder
+            width: calc(100% - #{sp-vw(55px)})
+            margin-left: sp-vw(10px)
+
+        select
+            padding-right: sp-vw(10px)
+
+    .ran-filters__label
+        width: sp-vw(55px)
+        text-align: right

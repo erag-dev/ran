@@ -1,0 +1,146 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Header > Links
+ * ======================= */
+
+.ran-header__linksholder
+    position: relative
+    display: flex
+    align-items: center
+    width: pc-vw(980px)
+    height: pc-vw(50px)
+    overflow: hidden
+    background: $color--rust
+    background: linear-gradient(to top, $color--rust, $color--black)
+    border-radius: pc-vw(10px)
+
+    &.in--section
+        position: absolute
+        top: pc-vw(-50px)
+        left: 0
+        width: 100%
+        height: pc-vw(70px)
+        padding: 0 1.5%
+
+        .ran-header__link
+            p
+                font-size: pc-vw(20px)
+
+
+.ran-header__linksholder-bg
+    @include absolute-topleft
+    z-index: 1
+    @include fullsize
+    background-image: url('assets/nav-lightning.png')
+    background-size: cover
+    background-position: top
+    background-repeat: no-repeat
+
+    &::after
+        content: ''
+        @include absolute-topleft
+        @include fullsize
+        background: linear-gradient(to top, rgba(255, 77, 0, 0.7), transparent)
+        opacity: 0.3
+    
+.ran-header__links
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+
+.ran-header__link
+    position: relative
+    z-index: 2
+    width: calc(100% / 6)
+    text-align: center
+    cursor: pointer
+
+    &:first-child
+        width: 13%
+
+        &::before
+            display: none !important
+
+    &:last-child
+        width: 20%
+
+    &::before
+        content: ''
+        @include absolute-centerY
+        left: 0
+        width: 1px
+        height: 100%
+        background: rgba(255, 255, 255, 0.18)
+
+    &:hover,
+    .active
+        p
+            font-weight: bold
+            color: $color--redorange
+            text-shadow: pc-vw(1px) pc-vw(1px) pc-vw(5px) rgba(0, 0, 0, 0.5)
+
+    p
+        font-family: $font--oxanium
+        font-size: pc-vw(16px)
+        font-weight: 500
+        color: $color--white
+        text-transform: uppercase
+        transition: all 0.15s ease
+
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .ran-header__linksholder
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 9
+        @include fullsize
+        transition: all 0.15s ease
+        opacity: 0
+        visibility: hidden
+
+        &.is--active
+            opacity: 1
+            visibility: visible
+
+    .ran-header__links
+        display: block
+        width: sp-vw(100px)
+        margin: auto
+
+    .ran-header__link
+        width: auto !important
+        margin-top: sp-vw(10px)
+
+        &:first-child
+            margin-top: 0px !important
+
+        &::before
+            display: none !important
+
+        p
+            font-size: sp-vw(8px)
+
+@media screen and (max-width: 600px)
+    .ran-header__links
+        width: 90%
+
+    .ran-header__link
+        margin-top: sp-vw(15px)
+
+        p
+            font-size: sp-vw(12px)
+
+@media screen and (max-width: 370px)
+    .ran-header__link
+        margin-top: sp-vw(20px)
+
+        p
+            font-size: sp-vw(14px)

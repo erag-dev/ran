@@ -1,0 +1,58 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Section > Box
+ * ======================= */
+
+.ran-box
+    background: $color--rust
+
+    .frame__limit
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: pc-vw(25px) 0
+
+    *
+        font-family: $font--nunito
+        font-size: pc-vw(20px)
+
+    span
+        font-family: inherit
+        font-size: inherit
+        color: $color--yellow
+
+    img
+        position: absolute
+        left: 20%
+        bottom: 0
+        width: auto
+        height: pc-vw(150px)
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .ran-box
+        .frame__limit
+            padding: sp-vw(10px) 0
+
+        *
+            font-size: sp-vw(8px)
+
+        img
+            left: -3%
+            height: sp-vw(65px)
+    
+@media screen and (max-width: 600px)
+    .ran-box
+        .frame__limit
+            padding: sp-vw(15px) 0
+
+        *
+            font-size: sp-vw(9.5px)
+
+        img
+            left: -5%
+            height: sp-vw(70px)

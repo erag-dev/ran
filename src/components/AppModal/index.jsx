@@ -1,7 +1,7 @@
 import AppModalDefault from "./_types/AppModalDefault"
-import AppModalLetter from "./_types/AppModalLetter"
+import AppModalAuth from "./_types/AppModalAuth"
 
 export {
     AppModalDefault,
-    AppModalLetter,
+    AppModalAuth,
 }

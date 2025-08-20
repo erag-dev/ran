@@ -6,7 +6,7 @@
  * ======================= */
 
 header
-    position: fixed
+    position: absolute
     top: 0
     left: 0
     z-index: 999
@@ -14,11 +14,16 @@ header
     background: transparent
     transition: all 0.15s ease
 
-    &.on--scroll
-        background: rgba(255, 249, 238, 0.95)
-        box-shadow: pc-vw(1px) 0 pc-vw(5px) rgba(0, 0, 0, 0.1)
+    &.in--home
+        .ran-header__limit
+            > div:last-child
+                display: none
 
-.snuggle-header__limit
+    // &.on--scroll
+    //     background: rgba(0, 0, 0, 0.95)
+    //     box-shadow: pc-vw(1px) 0 pc-vw(5px) rgba(0, 0, 0, 0.1)
+
+.ran-header__limit
     display: flex
     align-items: center
     justify-content: space-between
@@ -26,153 +31,140 @@ header
     margin: auto
     padding: pc-vw(20px) 0
 
-.snuggle-header__logoholder
-    width: pc-vw(220px)
+.ran-header__logoholder
+    width: pc-vw(96px)
 
-.snuggle-header__links
+/*
+ * Statuses
+ */
+.ran-header__statuses
     display: flex
     align-items: center
 
-.snuggle-header__link
-    margin-left: pc-vw(60px)
+.ran-header__status
+    position: relative
+    margin-left: pc-vw(15px)
+    padding-left: pc-vw(15px)
 
     &:first-child
         margin-left: 0px !important
+        padding-left: 0px !important
 
-    &:last-child
-        position: relative
-        width: pc-vw(95px)
-        height: pc-vw(35px)
-        border: 1px solid $color--navyblue
-        border-radius: pc-vw(10px)
-        transition: all 0.15s ease
+        &::before
+            display: none !important
 
-        &.is--active,
-        &:hover
-            border: 1px solid $color--pink
+    &.status--players
+        span
+            color: $color--aqua
 
-        p
-            @include absolute-centerXY
-            width: 90%
-            text-align: center
+    &::before
+        content: '/'
+        @include absolute-centerY
+        left: pc-vw(-2px)
+        font-size: pc-vw(15px)
+        color: $color--white
 
-    &:hover,
-    .active
-        p
-            color: $color--pink
+    *
+        font-size: pc-vw(15px)
+        color: $color--white
 
-    p
-        font-family: $font--itim
-        font-size: pc-vw(20px)
-        transition: all 0.15s ease
-
+        span
+            font-size: inherit !important
+            font-weight: bold
+            color: $color--redorange
 
 
 // ===================================================================================================
 // ===================================================================================================
 
-@media screen and (max-width: 1450px)
-    header
-        &.on--scroll
-            box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1)
-
-    .snuggle-header__limit
-        padding: 15px 0
-
-    .snuggle-header__logoholder
-        width: 200px
-
-    .snuggle-header__link
-        margin-left: 50px
-
-        &:last-child
-            width: 85px
-            height: 32px
-
-        p
-            font-size: 18px
-
-
+ 
 @media screen and (max-width: 1000px)
-    header
-        &.on--scroll
-            .snuggle-header__links
-                box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.05)
+    header.in--home 
+        .ran-header__limit 
+            > div:last-child
+                display: block
 
-    .snuggle-header__limit
-        padding: sp-vw(5px) 0
+    .ran-header__limit
+        padding: sp-vw(7px) 0
 
-    .snuggle-header__logoholder
-        width: sp-vw(90px)
+    .ran-header__logoholder
+        width: sp-vw(35px)
 
-    .snuggle-header__menu
-        *
-            font-family: $font--itim
-            font-size: sp-vw(10px)
-            
-    .snuggle-header__links
-        position: absolute
-        top: 100%
-        right: 0
-        z-index: 999
-        display: block
-        width: sp-vw(90px)
-        padding: sp-vw(12px) 5%
-        background: rgba(255, 249, 238, 0.95)
-        border-radius: 0px 0 0 10px
-        text-align: right
-        transform: translateX(100%)
-        transition: all 0.15s ease
+    .ran-header__statuses
+        display: none
+
+    
+    /*
+     * Menu
+     */
+    .ran-header__menu
+        position: relative
+        z-index: 99
+        width: 24px
+        height: 18px
 
         &.is--active
-            transform: translateX(0)
+            span:nth-of-type(1) 
+                transform: rotate(45deg)
+                top: 0px
+                left: 5px
 
-    .snuggle-header__link
-        margin-top: sp-vw(12px)
-        margin-left: 0px !important
+            span:nth-of-type(2) 
+                width: 0%
+                opacity: 0
 
-        &:first-child
-            margin-top: 0px
-
-        &:last-child
-            width: auto
-            height: auto
-            border: none !important
+            span:nth-of-type(3) 
+                transform: rotate(-45deg)
+                top: 17px
+                left: 5px
             
-            p
-                position: relative
-                top: auto
-                left: auto
-                width: auto
-                transform: translate(0, 0)
-                text-align: right
+        span 
+            position: absolute
+            display: block
+            width: 100%
+            height: 2px
+            background: $color--white
+            opacity: 1
+            left: 0
+            transform: rotate(0deg)
+            transition: .25s ease
 
-        p
-            font-size: sp-vw(10px)
+            &:nth-of-type(1) 
+                top: 0px
+                transform-origin: left center
+
+            &:nth-of-type(2) 
+                top: 50%
+                transform: translateY(-50%)
+                transform-origin: left center
+                
+            &:nth-of-type(3) 
+                top: 100%
+                transform-origin: left center
+                transform: translateY(-100%)
+
 
 @media screen and (max-width: 600px)
-    .snuggle-header__limit
-        padding: 8px 0
+    .ran-header__limit
+        padding: sp-vw(12px) 0
 
-    .snuggle-header__logoholder
-        width: sp-vw(120px)
+    .ran-header__logoholder
+        width: sp-vw(50px)
 
-    .snuggle-header__menu
+    .ran-header__menu
         *
             font-size: sp-vw(15px)
 
-    .snuggle-header__links
-        width: sp-vw(120px)
-        padding: sp-vw(15px) 5%
+@media screen and (max-width: 450px)
+    .ran-header__logoholder
+        width: sp-vw(60px)
 
-    .snuggle-header__link
-        margin-top: 15px
-
-        p
-            font-size: sp-vw(15px)
-
-
-
+@media screen and (max-width: 400px)
+    /*
+     * Menu
+     */
+    .ran-header__menu
+        transform: scale(0.8)
 
 
         

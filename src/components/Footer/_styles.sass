@@ -5,228 +5,120 @@
  * Footer
  * ======================= */
 
-.snuggle-footer
-    .frame__header
-        opacity: 1 !important
-        transform: translateY(0) !important
+.ran-footer__top
+    background: $color--rust
 
-/*
- * Top
- */
-.snuggle-footer__top
+    .frame__limit
+        display: flex
+        justify-content: space-around
+        width: 62%
+        padding: pc-vw(15px) 0
+
+.ran-footer__top-calltoaction
+    &:hover
+        *
+            color: $color--aqua
+
+    *
+        font-family: $font--oxanium
+        font-weight: 500
+        transition: all 0.15s ease
+        cursor: pointer
+
+.ran-footer__body
     position: relative
-
-    &.is--hide
-        .snuggle-footer__limit
-            min-height: auto
-
-    .frame__header
-        width: 100%
-        margin-bottom: 0
-
-.snuggle-footer__limit
-    min-height: 30vw
-
-.snuggle-footer__top-edge
-    position: absolute
-    left: 0
-    bottom: -6.5%
-    width: 100%
-
-
-/*
- * Get In Touch
- */
-.snuggle-footer__getintouch,
-.snuggle-footer__sponsor
-    background: $color--corn
-
-    .frame__limit
-        padding: pc-vw(70px) 0
-
-/*
- * Sponsor
- */
-.snuggle-footer__sponsor
-    .btn
-        width: pc-vw(460px)
-
-/*
- * Bottom
- */
-.snuggle-footer__bottom
-    background: $color--navyblue
-
-    .frame__limit
-        padding: pc-vw(35px) 0
-
-.snuggle-footer__bottom-desc,
-.snuggle-footer__bottom-copyright,
-.snuggle-footer__bottom-extra *
-    margin-bottom: pc-vw(25px)
-    font-size: pc-vw(15px)
-    color: $color--white
     text-align: center
 
-.snuggle-footer__bottom-links
+    .frame__bg
+        background-position: bottom !important
+
+.ran-footer__links
     display: flex
     justify-content: center
-    margin-bottom: pc-vw(25px)
+    margin-top: pc-vw(25px)
 
-.snuggle-footer__bottom-link
+.ran-footer__link
     position: relative
-    width: pc-vw(30px)
-    height: pc-vw(30px)
+    width: pc-vw(40px)
+    height: pc-vw(40px)
     margin-left: pc-vw(25px)
+    transition: all 0.15s ease
 
     &:first-child
         margin-left: 0px !important
 
     &:hover
-        .icon--1
-            z-index: 1
-            opacity: 0
-        
-        .icon--2
-            z-index: 2
-            opacity: 1
-            transform: scale(1.1)
+        transform: scale(0.95)
+        opacity: 0.7
 
-    img
-        transition: all 0.15s ease
-
-    .icon--2
-        opacity: 0
-
-
-.snuggle-footer__bottom-copyright
-    margin-bottom: 0 !important
-
-.snuggle-footer__bottom-extra
-    background: $footerBg
-    text-align: center
-
-    *
-        margin-bottom: 0px !important
-        padding: pc-vw(10px)
-        font-style: italic
-        font-size: pc-vw(13px)
-        color: $color--pink
+.ran-footer__credits
+    margin-top: pc-vw(25px)
+    font-style: italic
+    font-weight: normal
+    font-size: pc-vw(14px)
+    opacity: 0.7
 
 // ===================================================================================================
 // ===================================================================================================
 
 @media screen and (max-width: 1000px)
-    /*
-     * Top
-     */
-    .snuggle-footer__top 
-        .frame__header
-            br
-                display: none
-
+    .ran-footer__top
         .frame__limit
-            min-height: 40vw
+            width: 95%
+            padding: sp-vw(10px) 0
 
-    /*
-     * Get In Touch
-     */
-    .snuggle-footer__getintouch,
-    .snuggle-footer__sponsor 
-        .frame__limit
-            padding: sp-vw(30px) 0
+    .ran-footer__top-calltoaction
+        position: relative
+        padding: 0 sp-vw(10px)
+        text-align: center
 
-        
-    /*
-     * Sponsor
-     */
-    .snuggle-footer__sponsor
-        .frame__desc
-            br
-                display: none
+        &:first-child
+            &::before
+                display: none !important
 
-        .btn
-            width: sp-vw(230px)
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: 1px
+            height: 100%
+            background: rgba(255, 255, 255, 0.15)
 
-    /*
-     * Bottom
-     */
-    .snuggle-footer__bottom
-        .frame__limit
-            padding: sp-vw(18px) 0
-
-    .snuggle-footer__bottom-desc,
-    .snuggle-footer__bottom-copyright,
-    .snuggle-footer__bottom-extra *
-        margin-bottom: sp-vw(12.5px)
-        font-size: sp-vw(8px)
-
-    .snuggle-footer__bottom-links
-        margin-bottom: sp-vw(12.5px)
-
-    .snuggle-footer__bottom-link
-        width: sp-vw(15px)
-        height: sp-vw(15px)
-        margin-left: sp-vw(12.5px)
-
-        img
-            width: 100% !important
-
-    .snuggle-footer__bottom-extra
         *
-            padding: sp-vw(5px)
-            font-size: sp-vw(7px)
+            font-size: sp-vw(8px)
 
+    .ran-footer__links
+        margin-top: sp-vw(12px)
 
-@media screen and (max-width: 600px)
-    /*
-     * Top
-     */
-    .snuggle-footer__top 
-        .frame__limit
-            min-height: 45vw
-
-    /*
-     * Get In Touch
-     */
-    .snuggle-footer__getintouch
-        .frame__desc
-            br
-                display: none 
-
-
-    /*
-     * Sponsor
-     */
-    .snuggle-footer__sponsor
-        .btn
-            width: sp-vw(280px)
-
-    /*
-     * Bottom
-     */
-    .snuggle-footer__bottom
-        .frame__limit
-            padding: sp-vw(20px) 0
-
-    .snuggle-footer__bottom-desc,
-    .snuggle-footer__bottom-copyright,
-    .snuggle-footer__bottom-extra *
-        margin-bottom: sp-vw(15px)
-        font-size: sp-vw(10px)
-
-    .snuggle-footer__bottom-links
-        margin-bottom: sp-vw(15px)
-
-    .snuggle-footer__bottom-link
+    .ran-footer__link
         width: sp-vw(20px)
         height: sp-vw(20px)
-        margin-left: sp-vw(15px)
+        margin-left: sp-vw(12px)
 
-        img
-            width: 100% !important
+    .ran-footer__credits
+        margin-top: sp-vw(12px)
+        font-size: sp-vw(7px)
+   
 
-    .snuggle-footer__bottom-extra
+@media screen and (max-width: 600px)
+    .ran-footer__top
+        .frame__limit
+            width: 98%
+            padding: sp-vw(12px) 0
+
+    .ran-footer__top-calltoaction
         *
-            padding: sp-vw(7px)
             font-size: sp-vw(9px)
+
+    .ran-footer__links
+        margin-top: sp-vw(20px)
+
+    .ran-footer__link
+        width: sp-vw(30px)
+        height: sp-vw(30px)
+        margin-left: sp-vw(20px)
+
+    .ran-footer__credits
+        margin-top: sp-vw(20px)
+        font-size: sp-vw(9px)

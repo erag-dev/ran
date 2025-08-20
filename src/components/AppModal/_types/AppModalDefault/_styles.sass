@@ -33,7 +33,8 @@
     left: 0
     z-index: 1
     @include fullsize
-    background: rgba(0, 0, 0, 0.7)
+    background: rgba(0, 0, 0, 0.92)
+    // background: rgba(255, 255, 255, 0.15)
     backface-visibility: hidden
 
 .modal
@@ -46,22 +47,10 @@
     overflow: hidden
     margin-left: -0.6vw
     margin-bottom: 0.75vw
-    background: #fff
+    // background: rgba(0, 0, 0, 0.98)
     border-radius: pc-vw(10px)
     outline: 0
     transform: translate3d(0, 0, 0)
-
-    &.size--l
-        max-width: 55vw
-
-    &.size--xl
-        max-width: 70vw
-
-    &.size--m
-        max-width: 40vw
-
-    &.size--s
-        max-width: 25vw
 
     .frame__header,
     .frame__desc
@@ -69,11 +58,11 @@
 
 .modal__close
     position: absolute
-    top: pc-vw(15px)
-    right: pc-vw(15px)
+    top: pc-vw(12px)
+    right: pc-vw(12px)
     z-index: 3
-    width: pc-vw(35px)
-    height: pc-vw(35px)
+    width: pc-vw(30px)
+    height: pc-vw(30px)
     cursor: pointer
     transition: all 0.3s ease
 
@@ -85,7 +74,8 @@
 
 .modal__contents
     position: relative
-    width: 100%
+    width: 90%
+    margin: auto
     padding: pc-vw(80px) pc-vw(40px)
 
 

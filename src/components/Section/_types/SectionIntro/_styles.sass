@@ -5,73 +5,68 @@
  * Section > Intro
  * ======================= */
 
-.snuggle-subpageintro
+.ran-subpageintro
     text-align: center
 
     .frame__limit
-        padding-top: pc-vw(50px)
+        min-height: 33vw
+        padding-top: pc-vw(150px)
 
     .frame__header
         width: 100%
-        margin-bottom: pc-vw(40px)
-        font-size: pc-vw(56px)
+        margin-bottom: 0
         line-height: 1.1
+        text-transform: uppercase
 
     .frame__desc
-        margin-bottom: pc-vw(60px)
+        margin-top: pc-vw(50px)
+        margin-bottom: 0px !important
 
-        *
-            font-size: pc-vw(18px)
+.ran-subpageintro__logo
+    width: pc-vw(200px)
+    margin: auto
+    margin-bottom: pc-vw(15px)
 
-.snuggle-subpageintro__toptext
-    margin-bottom: pc-vw(10px)
+.ran-subpageintro__subtitle
+    margin-top: pc-vw(15px)
     font-size: pc-vw(18px)
-    font-weight: 500
-    line-height: 1
+    font-weight: normal
     
 
 // ===================================================================================================
 // ===================================================================================================
 
 @media screen and (max-width: 1000px)
-    .snuggle-subpageintro
+    .ran-subpageintro
         .frame__limit
-            padding-top: sp-vw(20px)
+            padding-top: sp-vw(45px)
 
         .frame__header
-            margin-bottom: sp-vw(15px)
-            font-size: sp-vw(20px)
-
-            br
-                display: none
+            position: relative
+            z-index: 2
+            margin-top: sp-vw(5px)
 
         .frame__desc
-            margin-bottom: sp-vw(25px)
+            margin-top: sp-vw(20px)
 
-            *
-                font-size: sp-vw(9px)
+    .ran-subpageintro__logo
+        @include absolute-centerX
+        z-index: 1
+        width: sp-vw(100px)
+        opacity: 0.25
 
-    .snuggle-subpageintro__toptext
-        margin-bottom: sp-vw(5px)
+    .ran-subpageintro__subtitle
+        margin-top: sp-vw(10px)
         font-size: sp-vw(9px)
         
     
 @media screen and (max-width: 600px)
-    .snuggle-subpageintro
+    .ran-subpageintro
         .frame__limit
-            padding-top: sp-vw(25px)
-
-        .frame__header
-            margin-bottom: sp-vw(20px)
-            font-size: sp-vw(22px)
+            padding-top: sp-vw(65px)
 
         .frame__desc
-            margin-bottom: sp-vw(25px)
+            margin-top: sp-vw(25px)
 
-            *
-                font-size: sp-vw(12px)
-
-    .snuggle-subpageintro__toptext
-        margin-bottom: sp-vw(8px)
-        font-size: sp-vw(12px)
-        
+    .ran-subpageintro__subtitle
+        font-size: sp-vw(13px)

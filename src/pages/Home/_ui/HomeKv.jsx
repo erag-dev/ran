@@ -1,65 +1,38 @@
 
-// import { gsap } from "gsap"
-// import { useGSAP } from "@gsap/react"
-
 import AppImg from "components/AppImg"
 import { SectionNormal } from "components/Section"
-import Button from "components/Button"
+import { ButtonNormal } from "components/Button"
 
-// import mainPhoto from "assets/kv-model.png"
-// import extraText1 from "assets/kv-text01.png"
-// import extraText2 from "assets/kv-text02.png"
-
-// gsap.registerPlugin(useGSAP);
+import kvBg from "assets/home/bg-kv.png"
+import imgRan from "assets/ran.png"
 
 const HomeKv = ({
-    callbackAdopt,
+    callbackDl,
 }) => {
 
-    // useGSAP(() => {
-    //     gsap.to('h2', {
-    //         autoAlpha: 1,
-    //         y: 0,
-    //         duration: 0.5,
-    //         ease: 'power1.inOut'
-    //     });
-
-    //     gsap.to('.snuggle-home__kv-main__text', {
-    //         autoAlpha: 1,
-    //         y: 0,
-    //         duration: 0.5,
-    //         stagger: {
-    //             each: 0.1
-    //         },
-    //         ease: 'power1.inOut'
-    //     });
-    // });
-
     return(
-        <SectionNormal extraClass="snuggle-home__kv">
+        <SectionNormal 
+            extraClass="ran-home__kv"
+            bg={kvBg}
+        >
 
-            {/* <div className="snuggle-home__kv-texts">
-                <h2>Find Your Furry Companion <br/>and <span>Snuggle</span> Up!</h2>
+            <div className="ran-home__kv-texts">
+                <AppImg src={imgRan} extraClass="ran-home__kv-ran" />
+
+                <h2 className="frame__header">Episode 7: 230 Max Level / 207 Last Skill</h2>
 
                 <div className="frame__desc">
                     <p>
-                        Welcome to Snuggle Seekers! We’re dedicated to rescuing and rehoming pets, giving them a second chance at happiness. Explore our success stories and find your perfect furry companion today.<br/><br/>
-                        <span>Let’s create a world filled with snuggles and unconditional love!</span>
+                        Welcome RANatics! Dive into RAN Online Ep.7, where you can play for free and earn as you go. Choose from 6 balanced classes, enjoy low EXP and drop rates, and team up for epic party leveling. With two channels to explore (Non-PK and PK), you’ll find the perfect setting for your adventure!
                     </p>
                 </div>
 
-                <Button 
+                <ButtonNormal 
                     isDiv={true}
-                    onClick={() => callbackAdopt(true)}
-                    btnLbl="Adopt Love Today"
+                    onClick={() => callbackDl(true)}
+                    btnLbl="DOWNLOAD GAME CLIENT"
                 />
             </div>
-
-            <div className="snuggle-home__kv-main">
-                <AppImg src={mainPhoto} />
-                <AppImg src={extraText1} extraClass="snuggle-home__kv-main__text text--1" />
-                <AppImg src={extraText2} extraClass="snuggle-home__kv-main__text text--2" />
-            </div> */}
 
         </SectionNormal>
     )

@@ -1,14 +1,12 @@
 
 import SectionNormal from "./_types/SectionNormal"
-import SectionWithEdges from "./_types/SectionWithEdges"
 import SectionIntro from "./_types/SectionIntro"
-import SectionStats from "./_types/SectionStats"
-import SectionPetflation from "./_types/SectionPetflation"
+import SectionFilters from "./_types/SectionFilters"
+import SectionBox from "./_types/SectionBox"
 
 export {
     SectionNormal,
-    SectionWithEdges,
     SectionIntro,
-    SectionStats,
-    SectionPetflation,
+    SectionFilters,
+    SectionBox,
 }

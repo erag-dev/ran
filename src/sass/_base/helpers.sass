@@ -9,28 +9,18 @@
     box-sizing: border-box
 
 /*
- * COLORS
- */
-.color--black 
-    color: $color--black
-.color--white  
-    color: $color--white !important
-.color--pink
-    color: $color--pink !important
-
-/*
  * FONTS
  */
 h1, h2, h3, h4, h5, h6 
-    font-family: $font--itim
+    font-family: $font--oxanium
     line-height: 1.2
-    color: $color--navyblue
+    color: $color--white
     -webkit-font-smoothing: antialiased
 
 p, span, label, a, i, strong, li 
-    font-family: $font--poppins
-    line-height: 1.45
-    color: $color--navyblue
+    font-family: $font--nunito
+    line-height: 1.6
+    color: $color--white
     -webkit-font-smoothing: antialiased
 
 /*
@@ -38,7 +28,6 @@ p, span, label, a, i, strong, li
  */
 .frame
     position: relative
-    z-index: 2
     overflow: hidden
 
     &.overflow--visible
@@ -49,41 +38,49 @@ p, span, label, a, i, strong, li
     z-index: 2
     width: 90%
     margin: auto
-    padding: pc-vw(100px) 0
-
-.frame__edge
-    position: absolute
-    z-index: 1
-    width: 100%
-
-    &.edge--1
-        top: pc-vw(-42px)
-    
-    &.edge--2
-        bottom: pc-vw(-50px)
+    padding: pc-vw(50px) 0
 
 .frame__header
-    width: 75% 
     margin: auto
-    margin-bottom: pc-vw(20px)
-    font-size: pc-vw(40px)
+    margin-bottom: pc-vw(50px)
+    font-size: pc-vw(25px)
+    font-weight: bold
     text-align: center
-    opacity: 0
-    transform: translateY(25%)
-
-    span
-        font-family: inherit !important
-        font-size: inherit !important
-        color: $color--pink
+    text-shadow: pc-vw(1px) pc-vw(1px) pc-vw(5px) rgba(0, 0, 0, 0.5)
+    // opacity: 0
+    // transform: translateY(25%)
 
 .frame__desc
-    width: 70%
+    width: 60%
     margin: auto
     margin-bottom: pc-vw(50px)
     text-align: center
 
     *
-        font-size: pc-vw(16px)
+        font-size: pc-vw(18px)
+        text-shadow: pc-vw(1px) pc-vw(1px) pc-vw(5px) rgba(0, 0, 0, 0.5)
+
+    span
+        font-size: inherit
+        color: inherit
+
+    .italic
+        font-style: italic !important
+
+.fs--25px
+    font-size: pc-vw(25px)
+
+.fs--20px
+    font-size: pc-vw(20px)
+
+.fs--16px
+    font-size: pc-vw(16px)
+
+.fs--14px
+    font-size: pc-vw(14px)
+
+.fs--12px
+    font-size: pc-vw(12px)
 
 @media screen and (max-width: 1000px)
     .frame__limit
@@ -91,86 +88,61 @@ p, span, label, a, i, strong, li
 
     .frame__header
         width: 100%
-        margin-bottom: sp-vw(12px)
-        font-size: sp-vw(16px)
+        margin-bottom: sp-vw(20px)
+        font-size: sp-vw(14px)
+        line-height: 1.4
 
     .frame__desc
         width: 100%
         margin-bottom: sp-vw(20px)
 
         *
-            font-size: sp-vw(8px)
+            font-size: sp-vw(9px)
 
+    .fs--25px
+        font-size: sp-vw(14px)
+
+    .fs--20px
+        font-size: sp-vw(10px)
+
+    .fs--16px
+        font-size: sp-vw(8px)
+
+    .fs--14px
+        font-size: sp-vw(7px)
+
+    .fs--12px
+        font-size: sp-vw(6px)
+        
 
 @media screen and (max-width: 600px)
-    .frame.overflow--visible
-        .frame__limit
-            padding: sp-vw(30px) 0
-
     .frame__limit
         padding: sp-vw(35px) 0
 
     .frame__header
-        margin-bottom: sp-vw(15px)
+        margin-bottom: sp-vw(25px)
         font-size: sp-vw(18px)
 
     .frame__desc
         margin-bottom: sp-vw(25px)
 
         *
-            font-size: sp-vw(11px)
+            font-size: sp-vw(13px)
 
-/*
- * Box (With Hover)
- */
-.box--hoverheart
-    position: relative
+    .fs--25px
+        font-size: sp-vw(18px)
 
-    &::before,
-    &::after
-        content: ''
-        position: absolute
-        z-index: 2
-        opacity: 0
-        transition: all 0.15s ease
-    
-    &::before
-        top: 0
-        left: 0
-        @include fullsize
-        background: rgba(0, 0, 0, 0.5)
+    .fs--20px
+        font-size: sp-vw(14px)
 
-    &::after
-        @include absolute-centerXY
-        width: pc-vw(30px)
-        height: pc-vw(22px)
-        background-image: url('assets/heart-hug.svg')
-        background-size: cover
-        background-repeat: no-repeat
-        cursor: pointer
+    .fs--16px
+        font-size: sp-vw(12px)
 
-    &:hover
-        &::before,
-        &::after
-            opacity: 1
+    .fs--14px
+        font-size: sp-vw(10px)
 
-        img
-            transform: scale(1.05)
-
-    img
-        transition: all 0.15s ease
-
-@media screen and (max-width: 1000px)
-    .box--hoverheart
-        &::after
-            width: sp-vw(15px)
-            height: sp-vw(11px)
-
-@media screen and (max-width: 600px)
-    .box--hoverheart
-        &::after
-            width: sp-vw(20px)
-            height: sp-vw(16px)
+    .fs--12px
+        font-size: sp-vw(8px)
 
 /*
  * FRAME > BACKGROUND
@@ -180,7 +152,6 @@ p, span, label, a, i, strong, li
     top: 0px
     left: 0px
     @include fullsize
-    background: $color--corn
     background-repeat: no-repeat !important
     background-position: center center !important
 
