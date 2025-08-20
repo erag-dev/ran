@@ -1,0 +1,43 @@
+@use 'stylesGeneral/_base/_variables' as *
+@use 'stylesGeneral/_base/_mixins' as *
+    
+/* =======================
+ * Error Page
+ * ======================= */
+
+.error404
+    position: relative
+    width: 100%
+    height: 100vh
+    background: $color--black
+
+.error404__inner
+    @include absolute-centerXY
+    width: pc-vw(300px)
+    height: pc-vw(300px)
+
+    .btn
+        margin-top: pc-vw(-25px) !important
+        
+        // &:hover
+        //     border: 1px solid $color--red !important
+
+        //     *
+        //         color: $color--red !important
+
+
+// ===================================================================================================
+// ===================================================================================================
+
+@media screen and (max-width: 1000px)
+    .error404__inner
+        width: sp-vw(150px)
+        height: sp-vw(150px)
+
+        .btn
+            margin-top: sp-vw(-15px) !important
+            
+@media screen and (max-width: 600px)
+    .error404__inner
+        width: 55vw
+        height: sp-vw(160px)

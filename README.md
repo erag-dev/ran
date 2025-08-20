@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.2.0**
++ [feat] added error page
+
 **1.1.1**
 + [fixed] adjusted vite.config.js
 

@@ -16,7 +16,7 @@ const SupportPage = lazy(() => import('pages/Support'));
 /* ----------------------------
 	Error Pages
    ---------------------------- */
-// const ErrorPageNotFound = lazy(() => import('pages/Error404'));
+const ErrorPageNotFound = lazy(() => import('pages/Error404'));
 
 
 // ********************************************************************************************************************************
@@ -54,7 +54,7 @@ const routes = () => {
 						element={<SupportPage/>} 
 					/>
 
-					{/* <Route path="*" element={<ErrorPageNotFound/>} /> */}
+					<Route path="*" element={<ErrorPageNotFound/>} />
 
 				</Routes>
 			</Suspense>
