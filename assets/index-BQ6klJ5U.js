@@ -1,1 +1,0 @@
-import{a as t,j as s}from"./index-DR7pcsp6.js";import{A as e,B as n}from"./ButtonNormal-CCqqoycV.js";const o="/ran/assets/404-DcEhQRBE.png",m=()=>{const a=t(),r=()=>a("/");return s.jsx("div",{className:"error404",children:s.jsxs("div",{className:"error404__inner",children:[s.jsx(e,{src:o}),s.jsx(n,{isDiv:!0,btnLbl:"BACK TO HOME",onClick:()=>r()})]})})};export{m as default};
