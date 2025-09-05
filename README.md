@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.4.0**
++ [feat] added .github/workflows/deploy.yml
+
 **1.3.0**
 + [fixed] adjusted vite.config.js & routes.js => base: '/'
 
