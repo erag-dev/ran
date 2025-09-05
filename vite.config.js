@@ -2,7 +2,8 @@ import { defineConfig, transformWithEsbuild } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
 export default defineConfig({
-    base: "/ran",
+    base: "/",
+    // base: "/ran/",
     build: {
         outDir: 'dist',
     },

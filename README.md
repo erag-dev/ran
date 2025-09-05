@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.3.0**
++ [fixed] adjusted vite.config.js & routes.js => base: '/'
+
 **1.2.0**
 + [feat] added error page
 
