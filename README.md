@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.7.0**
++ [fixed] vite.config => added path.resolve
+
 **1.6.0**
 + [fixed] clean scripts in package.json
 
