@@ -1,5 +1,9 @@
 ## Commit Logs
 
+**1.7.1**
++ [fixed] vite.config => comment out transformWithEsbuild
++ [fixed] index.html => changed "/src/main.jsx" to "./src/main.jsx"
+
 **1.7.0**
 + [fixed] vite.config => added path.resolve
 
