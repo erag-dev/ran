@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
     // base: "./",
-    base: "/ran/",
+    base: "/ran-v2/",
     build: {
         outDir: 'dist',
     },

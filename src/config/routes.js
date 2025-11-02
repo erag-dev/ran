@@ -26,7 +26,7 @@ const routes = () => {
 
 	return (		
 		// <Router basename="/">
-		<Router basename="/ran">
+		<Router basename="/ran-v2">
 			<Suspense fallback={<AppLoader isShow={true} />}>
 				<Routes>
 
