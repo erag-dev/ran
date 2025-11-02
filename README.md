@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.7.2**
++ [fixed] vite.config => revert transformWithEsbuild
+
 **1.7.1**
 + [fixed] vite.config => comment out transformWithEsbuild
 + [fixed] index.html => changed "/src/main.jsx" to "./src/main.jsx"

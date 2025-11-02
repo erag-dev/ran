@@ -1,5 +1,4 @@
-// import { defineConfig, transformWithEsbuild } from 'vite'
-import { defineConfig } from 'vite'
+import { defineConfig, transformWithEsbuild } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 
@@ -9,19 +8,23 @@ export default defineConfig({
         outDir: 'dist',
     },
     plugins: [
-        // {
-        //     name: 'treat-js-files-as-jsx',
-        //     async transform(code, id) {
-        //         if (!id.match(/src\/.*\.js$/))  return null
-        //         // Use the exposed transform from vite, instead of directly
-        //         // transforming with esbuild
-        //         return transformWithEsbuild(code, id, {
-        //             loader: 'jsx',
-        //             jsx: 'automatic',
-        //         })
-        //     },
-        // },
         react(),
+        {
+            name: 'js-as-jsx',
+            enforce: 'pre', // make sure it runs before other transforms
+            async transform(code, id) {
+                if (!id.endsWith('.js') || !id.includes('/src/')) return null
+                    const result = await transformWithEsbuild(code, id, {
+                    loader: 'jsx',
+                    jsx: 'automatic',
+                    sourcemap: true,
+                })
+                return {
+                    code: result.code,
+                    map: result.map,
+                }
+            },
+        },
     ],
     server: {
         port: 8000,
