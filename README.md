@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.7.3**
++ [fixed] revert configs
+
 **1.7.2**
 + [fixed] vite.config => revert transformWithEsbuild
 
