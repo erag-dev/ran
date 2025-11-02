@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.5.0**
++ [fixed] fixed style responsive login / sign up modal
+
 **1.4.0**
 + [feat] added .github/workflows/deploy.yml
 

@@ -28,7 +28,38 @@
 // ==================================================================================================================================
 
 @media screen and (max-width: 1000px)
+    .modal-holder.modal--auth
+        .modal.size--m
+            max-width: 85%
+
+        .modal__close
+            right: 0
+
+        .modal__contents
+            width: 100%
+            padding: 80px 0px
    
             
 @media screen and (max-width: 600px)
-    
+    .modal-holder.modal--auth
+        padding: 0 15px
+
+        .modal.size--m
+            max-width: 100%
+
+        .modal--auth__btns
+            > div > p
+                margin-bottom: 8px
+
+                
+@media screen and (max-width: 450px)
+    .modal-holder.modal--auth
+
+        .modal__contents
+            padding: 50px 0px
+
+        .modal--auth__btns
+            display: block
+
+            > div:first-child
+                margin-bottom: 25px
