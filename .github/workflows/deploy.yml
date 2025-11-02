@@ -25,20 +25,21 @@ jobs:
           node-version: 20
           cache: 'npm'
 
-      # 3. Install dependencies
-      - run: npm ci
+      # 3. Clean old build & rebuild
+      - name: Clean old build & rebuild
+        run: |
+          rm -rf dist
+          npm ci
+          npm run build
 
-      # 4. Build the project
-      - run: npm run build
-
-      # 5. Configure GitHub Pages
+      # 4. Configure GitHub Pages
       - uses: actions/configure-pages@v4
 
-      # 6. Upload dist/ as artifact
+      # 5. Upload dist/ as artifact
       - uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'       # Important: the contents of dist, not the folder itself
 
-      # 7. Deploy to GitHub Pages
+      # 6. Deploy to GitHub Pages
       - id: deployment
         uses: actions/deploy-pages@v4
