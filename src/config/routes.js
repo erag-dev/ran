@@ -25,7 +25,8 @@ const ErrorPageNotFound = lazy(() => import('pages/Error404'));
 const routes = () => {
 
 	return (		
-		<Router basename="/ran">
+		// <Router basename="/ran">
+		<Router basename="/">
 			<Suspense fallback={<AppLoader isShow={true} />}>
 				<Routes>
 
