@@ -1,5 +1,8 @@
 ## Commit Logs
 
+**1.6.0**
++ [fixed] clean scripts in package.json
+
 **1.5.0**
 + [fixed] fixed style responsive login / sign up modal
 
