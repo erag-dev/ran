@@ -37,7 +37,7 @@ jobs:
       # 6. Upload dist/ as artifact
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist       # Important: the contents of dist, not the folder itself
+          path: ./dist/*       # Important: the contents of dist, not the folder itself
 
       # 7. Deploy to GitHub Pages
       - id: deployment
